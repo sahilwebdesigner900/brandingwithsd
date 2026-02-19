@@ -97,13 +97,9 @@ export default function Footer() {
 
             {/* Brand Section */}
             <div className="lg:col-span-2 space-y-6">
-              <Link href="/" className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">DS</span>
-                </div>
-                <div>
-                  <span className="font-bold text-lg block text-foreground leading-tight">Digital Services</span>
-                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Premium Web Solutions</span>
+              <Link href="/" className="flex items-center gap-2">
+                <div className="relative w-52 h-20 sm:w-80 sm:h-25">
+                  <Image src="/logofooter.png" alt="Logo" fill className="object-contain" priority />
                 </div>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
