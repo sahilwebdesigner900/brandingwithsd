@@ -99,7 +99,7 @@ export default function Footer() {
             <div className="lg:col-span-2 space-y-6">
               <Link href="/" className="flex items-center gap-2">
                 <div className="relative w-52 h-20 sm:w-80 sm:h-25">
-                  <Image src="/logofooter.png" alt="Logo" fill className="object-contain" priority />
+                  <Image src="/logooo.png" alt="Logo" fill className="object-contain" priority />
                 </div>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
