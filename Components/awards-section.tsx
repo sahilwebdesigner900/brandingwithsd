@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { SectionHeader } from "@/Components/section-header"
+import { SectionHeader } from "@/components/section-header"
 import Image from "next/image"
 
 const techStack = [
