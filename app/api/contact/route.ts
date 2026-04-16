@@ -1,15 +1,24 @@
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: Request) {
   try {
+    const resendApiKey = process.env.RESEND_API_KEY
+    const receiverEmail = process.env.RECEIVER_EMAIL
+
+    if (!resendApiKey || !receiverEmail) {
+      return NextResponse.json(
+        { success: false, error: "Email service is not configured." },
+        { status: 500 }
+      )
+    }
+
     const { name, email, phone, company, message } = await req.json()
+    const resend = new Resend(resendApiKey)
 
     const data = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>", // ✅ must be this
-      to: [process.env.RECEIVER_EMAIL as string],
+      to: [receiverEmail],
       replyTo: email,
       subject: "New Contact Form Message",
       html: `
@@ -23,10 +32,13 @@ export async function POST(req: Request) {
     })
 
     return NextResponse.json({ success: true, data })
-  } catch (error: any) {
+  } catch (error) {
     console.error("RESEND ERROR:", error)
     return NextResponse.json(
-      { success: false, error: error.message },
+      {
+        success: false,
+        error: error instanceof Error ? error.message : "Something went wrong.",
+      },
       { status: 500 }
     )
   }
