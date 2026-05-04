@@ -1,17 +1,17 @@
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
 
-export async function GET() {
-  return NextResponse.json({ message: "API is working" })
-}
+// export async function GET() {
+//   return NextResponse.json({ message: "API is working" })
+// }
 
 export async function POST(req: Request) {
   try {
     const resendApiKey = process.env.RESEND_API_KEY
     const receiverEmail = process.env.RECEIVER_EMAIL
 
-    console.log("API KEY:", resendApiKey)
-    console.log("EMAIL:", receiverEmail)
+    // console.log("API KEY:", resendApiKey)
+    // console.log("EMAIL:", receiverEmail)
 
     if (!resendApiKey || !receiverEmail) {
       return NextResponse.json(
