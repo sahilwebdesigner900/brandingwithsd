@@ -83,61 +83,64 @@ export default function portfolioPage() {
         {/* --- SECTION 3: PROJECTS --- */}
         <section className="pb-28 px-6">
           <div className="max-w-7xl mx-auto">
-            {/* 🔥 SECTION HEADER */}
+
+            {/* 🔥 HEADER */}
             <div className="mb-16 text-center">
               <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
                 Selected Work
               </h2>
-              <p className="text-slate-500 max-w-xl mx-auto">
+              <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-base leading-relaxed">
                 A collection of websites designed with performance, aesthetics, and user experience in mind.
               </p>
             </div>
 
             {/* 💎 GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
               {projects.map((project, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.08 }}
 
-                  className="group rounded-[2rem] overflow-hidden 
+                  className="rounded-[2rem] overflow-hidden 
           bg-white dark:bg-slate-900 
           border border-slate-200 dark:border-slate-800 
           shadow-sm"
                 >
 
                   {/* 🖼️ IMAGE */}
-                  <div className="relative w-full h-64 overflow-hidden">
+                  <div className="relative w-full h-56">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+                      className="object-cover"
                     />
                   </div>
 
                   {/* 📄 CONTENT */}
-                  <div className="p-7">
+                  <div className="p-6">
 
-                    <h3 className="text-xl font-bold mb-2">
+                    <h3 className="text-lg font-bold mb-2">
                       {project.title}
                     </h3>
 
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">
                       {project.desc}
                     </p>
 
-                    {/* 🔗 ACTION */}
+                    {/* 🔗 BUTTON */}
                     <a
                       href={project.link}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm"
                     >
-                      View Live Project
+                      View Project
                       <ArrowRight size={16} />
                     </a>
 
