@@ -74,7 +74,6 @@ export default function ContactPage() {
             </motion.div>
           </div>
         </section>
-
         {/* Contact Grid */}
         <section className="pb-24 px-6">
           <div className="max-w-7xl mx-auto">
@@ -141,20 +140,17 @@ export default function ContactPage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="lg:col-span-7 bg-card border border-border p-8 md:p-10 rounded-3xl shadow-xl shadow-primary/5"
-              >
+                className="lg:col-span-7 bg-card border border-border p-8 md:p-10 rounded-3xl shadow-xl shadow-primary/5" >
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Full Name</label>
-                      <input
-                        required
+                      <input required
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                        placeholder="John Doe"
-                      />
+                        placeholder="John Doe" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Company Name</label>
@@ -167,7 +163,6 @@ export default function ContactPage() {
                       />
                     </div>
                   </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Email Address</label>
@@ -227,8 +222,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
-                      placeholder="Describe your project goals..."
-                    />
+                      placeholder="Describe your project goals..." />
                   </div>
 
                   {error && (

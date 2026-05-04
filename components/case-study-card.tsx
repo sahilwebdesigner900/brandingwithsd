@@ -34,7 +34,6 @@ export function CaseStudyCard({ image, flag, project, challenge, results, keywor
         {image && <div className="w-full h-full flex items-center justify-center text-4xl">{image}</div>}
         {flag && <div className="absolute top-4 right-4 text-4xl">{flag}</div>}
       </div>
-
       <div className="p-6">
         <p className="text-sm text-accent font-semibold mb-2">Project: {project}</p>
         <h3 className="text-xl font-bold text-foreground mb-3">Challenge</h3>
@@ -51,7 +50,6 @@ export function CaseStudyCard({ image, flag, project, challenge, results, keywor
             ))}
           </div>
         </div>
-
         <div className="mb-4">
           <h4 className="font-semibold text-foreground mb-2 text-sm">Top Keywords</h4>
           <div className="space-y-1">
@@ -62,7 +60,6 @@ export function CaseStudyCard({ image, flag, project, challenge, results, keywor
             ))}
           </div>
         </div>
-
         <motion.div className="flex items-center text-primary text-sm font-semibold group-hover:gap-2 transition-all">
           View Case Study <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
         </motion.div>

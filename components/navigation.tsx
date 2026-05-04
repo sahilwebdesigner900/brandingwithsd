@@ -15,11 +15,9 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false); // Mobile Drawer Toggle
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false); // Desktop Hover
   const [activeCategory, setActiveCategory] = useState("Web Design"); // Desktop Active
-
   // MOBILE STATES
   const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
   const [mobileActiveSub, setMobileActiveSub] = useState<string | null>(null);
-
   // Close mobile menu on resize
   useEffect(() => {
     const handleResize = () => {
@@ -28,7 +26,6 @@ export default function Navigation() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   const categories = [
     { label: "Web Design", href: "/services/web-design" },
     { label: "Web Development", href: "/services/web-development" },
@@ -93,7 +90,7 @@ export default function Navigation() {
   };
 
   const navLinks = [
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Our Portfolio", href: "/portfolio" },
     { label: "About", href: "/about" },
     { label: "Pricing", href: "/pricing" },
   ];
@@ -102,14 +99,12 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 w-full bg-background border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-32 h-10 sm:w-40 sm:h-12">
               <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
             </div>
           </Link>
-
           {/* --- DESKTOP NAVIGATION --- */}
           <div className="hidden lg:flex items-center gap-1">
             <div
@@ -121,7 +116,6 @@ export default function Navigation() {
                 Services
                 <ChevronDown size={14} className={`transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
               </button>
-
               <AnimatePresence>
                 {isMegaMenuOpen && (
                   <motion.div
@@ -147,7 +141,6 @@ export default function Navigation() {
                         ))}
                       </div>
                     </div>
-
                     {/* Right Panel: Sub-Services Grid */}
                     <div className="w-2/3 p-10 bg-background min-h-[450px]">
                       <h3 className="text-2xl font-black mb-6 text-foreground tracking-tight">{activeCategory}</h3>
@@ -185,7 +178,6 @@ export default function Navigation() {
               </Link>
             ))}
           </div>
-
           {/* Desktop Right Side */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />

@@ -8,7 +8,7 @@ import { CaseStudyCard } from "@/components/case-study-card"
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-const caseStudies = [
+const portfolio = [
   {
     flag: "🇮🇳",
     project: "SUKOJI ELEVATOR PVT LTD",
@@ -95,7 +95,7 @@ const caseStudies = [
   },
 ]
 
-export default function CaseStudiesPage() {
+export default function portfolioPage() {
   return (
     <>
       <Navigation />
@@ -155,7 +155,7 @@ export default function CaseStudiesPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {caseStudies.map((study, i) => (
+              {portfolio.map((study, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -220,7 +220,6 @@ export default function CaseStudiesPage() {
             </Link>
           </div>
         </section>
-
       </main>
       <WhatsAppButton />
       <Footer />
