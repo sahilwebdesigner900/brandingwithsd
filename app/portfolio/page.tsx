@@ -8,93 +8,32 @@ import { CaseStudyCard } from "@/components/case-study-card"
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-const portfolio = [
+const projects = [
   {
-    flag: "🇮🇳",
-    project: "SUKOJI ELEVATOR PVT LTD",
-    challenge: "Low local visibility for elevator manufacturing keywords and stagnant GMB interaction.",
-    results: [
-      { metric: "GMB Ranking", value: "#1" },
-      { metric: "Inquiries", value: "+180%" },
-      { metric: "Market Reach", value: "Global" },
-    ],
-    keywords: [
-      { name: "Elevator Manufacturers", rank: 1 },
-      { name: "Lift Maintenance", rank: 1 },
-    ],
+    title: "Business Website",
+    desc: "Modern responsive business website with clean UI.",
+    image: "/project1.png",
+    link: "https://sahilwebdesigner900.github.io/portfolio/",
   },
   {
-    flag: "🇦🇪",
-    project: "Gray Tigers Security Services",
-    challenge: "High competition in Dubai's security sector. Needed to rank for premium 'VIP Protection' keywords.",
-    results: [
-      { metric: "Organic Traffic", value: "240%" },
-      { metric: "Conversion", value: "14.5%" },
-      { metric: "Top 3 Keywords", value: "150+" },
-    ],
-    keywords: [
-      { name: "Security Services Dubai", rank: 1 },
-      { name: "VIP Protection UAE", rank: 2 },
-    ],
+    title: "E-commerce Store",
+    desc: "Fully functional online store with payment integration.",
+    image: "/project2.png",
+    link: "https://sahilwebdesigner900.github.io/portfolio/",
   },
   {
-    flag: "🇮🇳",
-    project: "Nikk Technologies",
-    challenge: "Global technical SEO barriers and high bounce rates on service landing pages.",
-    results: [
-      { metric: "Lead Velocity", value: "4x" },
-      { metric: "Bounce Rate", value: "-32%" },
-      { metric: "DA Growth", value: "+18" },
-    ],
-    keywords: [
-      { name: "Custom Software India", rank: 2 },
-      { name: "IT Consulting", rank: 3 },
-    ],
+    title: "Landing Page",
+    desc: "High-converting landing page for marketing campaigns.",
+    image: "/project3.png",
+    link: "https://sahilwebdesigner900.github.io/portfolio/",
   },
   {
-    flag: "🇮🇳",
-    project: "www.acko.com",
-    challenge: "Low-quality backlinks limited growth | High competition in insurance | Stagnant traffic",
-    results: [
-      { metric: "Traffic Growth", value: "3x" },
-      { metric: "Keywords Covered", value: "803K" },
-      { metric: "Organic Traffic", value: "99.94%" },
-    ],
-    keywords: [
-      { name: "Car insurance", rank: 1 },
-      { name: "Auto insurance", rank: 1 },
-    ],
-  },
-  {
-    flag: "🇺🇸",
-    project: "Venom Motorsports",
-    challenge: "Technical debt and poor ranking for main keywords like 'mini Jeep' and 'monkey bikes'.",
-    results: [
-      { metric: "Traffic Growth", value: "390%" },
-      { metric: "Organic Traffic", value: "490K" },
-      { metric: "Keywords Top 3", value: "1000+" },
-    ],
-    keywords: [
-      { name: "Mini jeeps", rank: 1 },
-      { name: "Monkey bikes", rank: 1 },
-    ],
-  },
-  {
-    flag: "🇦🇪",
-    project: "Chokhi Dhani Dubai",
-    challenge: "Increase footfall and GMB visibility from 2.4k to 24k monthly traffic.",
-    results: [
-      { metric: "Traffic Growth", value: "937%" },
-      { metric: "Local Keywords", value: "400+" },
-      { metric: "GMB Ranking", value: "#1" },
-    ],
-    keywords: [
-      { name: "Indian Food Dubai", rank: 1 },
-      { name: "Best Indian Brunch", rank: 2 },
-    ],
+    title: "Portfolio Website",
+    desc: "Personal portfolio with modern animations.",
+    image: "/project4.png",
+    link: "https://sahilwebdesigner900.github.io/portfolio/",
   },
 ]
-
 export default function portfolioPage() {
   return (
     <>
@@ -115,11 +54,11 @@ export default function portfolioPage() {
                 Data-Driven Success
               </div>
               <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-6 md:mb-8 text-slate-950 leading-[1.1]">
-                Massive Growth. <br className="hidden sm:block" />
+                Our Portfolio. <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Zero Guesswork.</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                We help brands dominate the first page of Google through aggressive SEO, technical mastery, and elite link building.
+                Here are some of the websites I’ve designed and developed for clients. Clean, modern, and performance-focused designs.
               </p>
             </motion.div>
           </div>
@@ -142,31 +81,72 @@ export default function portfolioPage() {
         </div>
 
         {/* --- SECTION 3: FEATURED PROJECTS --- */}
-        <section className="py-16 md:py-24 px-6">
+        <section className="pb-28 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
-              <div className="max-w-xl">
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">Case Studies</h2>
-                <p className="text-slate-500 text-sm md:text-base">A detailed look at how we scale organic traffic and local GMB presence across different continents.</p>
-              </div>
-              <button className="flex items-center gap-2 text-sm font-bold text-blue-600 group w-fit">
-                Browse All Projects <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-              </button>
+
+            {/* 🔥 SECTION HEADER */}
+            <div className="mb-16 text-center">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
+                Selected Work
+              </h2>
+              <p className="text-slate-500 max-w-xl mx-auto">
+                A collection of websites designed with performance, aesthetics, and user experience in mind.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {portfolio.map((study, i) => (
+            {/* 💎 GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+              {projects.map((project, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white border border-slate-200 rounded-[24px] md:rounded-[30px] p-1.5 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300"
+
+                  className="group rounded-[2rem] overflow-hidden 
+          bg-white dark:bg-slate-900 
+          border border-slate-200 dark:border-slate-800 
+          shadow-sm"
                 >
-                  <CaseStudyCard {...study} index={i} />
+
+                  {/* 🖼️ IMAGE */}
+                  <div className="relative w-full h-64 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* 📄 CONTENT */}
+                  <div className="p-7">
+
+                    <h3 className="text-xl font-bold mb-2">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                      {project.desc}
+                    </p>
+
+                    {/* 🔗 ACTION */}
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm"
+                    >
+                      View Live Project
+                      <ArrowRight size={16} />
+                    </a>
+
+                  </div>
+
                 </motion.div>
               ))}
+
             </div>
           </div>
         </section>
@@ -214,8 +194,7 @@ export default function portfolioPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block w-full sm:w-auto bg-blue-600 text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-lg md:text-xl text-center hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 transform active:scale-95"
-            >
+              className="inline-block w-full sm:w-auto bg-blue-600 text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-lg md:text-xl text-center hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 transform active:scale-95" >
               Book My Free Strategy Call
             </Link>
           </div>
