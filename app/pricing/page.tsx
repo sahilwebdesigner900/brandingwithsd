@@ -82,27 +82,27 @@ export default function FullPricingPage() {
   ]
 
   const standaloneServices = [
-  { name: "Custom Next.js Website", price: "₹ 12,000+", cat: "Modern Stack", image: "/nextjs.png" },
-  { name: "Custom React Website", price: "₹ 8,000+", cat: "Modern Stack", image: "/react.png" },
-  { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "/tailwind.png" },
+  { name: "Custom Next.js Website", price: "₹ 22,000+", cat: "Modern Stack", image: "/nextjs.png" },
+  { name: "Custom HTML Website", price: "₹ 15,000+", cat: "Modern Stack", image: "/html.png" },
+  // { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "/tailwind.png" },
 
   { name: "Simple WordPress Setup", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
   { name: "Advanced Elementor Pro Site", price: "₹ 8,000+", cat: "CMS", image: "/elementor.png" },
-  { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/speed.png" },
-  { name: "Malware Removal & Security", price: "₹ 1,500", cat: "Maintenance", image: "/security.png" },
+  { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/wordpress.png" },
+  // { name: "Malware Removal & Security", price: "₹ 1,500", cat: "Maintenance", image: "/security.png" },
 
-  { name: "WooCommerce Store Setup", price: "₹ 12,000+", cat: "E-Com", image: "/woocommerce.png" },
-  { name: "Shopify Custom Liquid Theme", price: "₹ 8,000+", cat: "E-Com", image: "/shopify.png" },
-  { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
+  { name: "WooCommerce Shopify Store Setup", price: "₹ 8,000+", cat: "E-Com", image: "/shopify.png" },
+  { name: "Shopify Custom Liquid Theme", price: "₹ 12,000+", cat: "E-Com", image: "/shopify.png" },
+  // { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
 
-  { name: "SEO Audit & Internal Links", price: "₹ 4,000", cat: "Marketing", image: "/seo.png" },
-  { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "/seo2.png" },
-  { name: "Digital Marketing Strategy", price: "₹ 5,000+", cat: "Marketing", image: "/marketing.png" },
-  { name: "Google Analytics & GSC Setup", price: "₹ 2,000", cat: "Marketing", image: "/analytics.png" },
+  { name: "SEO one-page & Internal Links", price: "₹ 4,000", cat: "Marketing", image: "/seo.png" },
+  // { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "/seo2.png" },
+  { name: "Google Business Profile With LOCAL SEO", price: "₹ 5,000+", cat: "Marketing", image: "/icons/menu/gmb.png" },
+  // { name: "Google Analytics & GSC Setup", price: "₹ 2,000", cat: "Marketing", image: "/analytics.png" },
 
-  { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "/laravel.png" },
-  { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "/api.png" },
-  { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "/database.png" },
+  // { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "/laravel.png" },
+  // { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "/api.png" },
+  // { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "/database.png" },
 ]
 
   const faqs = [
@@ -265,7 +265,7 @@ export default function FullPricingPage() {
                       <img
                         src={service.image}
                         alt={service.name}
-                        className="w-20 h-20 object-contain"
+                        className="w-40 h-20 object-contain"
                       />
                     </div>
                   </div>
