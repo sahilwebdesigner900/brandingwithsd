@@ -82,32 +82,27 @@ export default function FullPricingPage() {
   ]
 
   const standaloneServices = [
-  // --- MODERN WEB STACK ---
-  { name: "Custom Next.js Website", price: "₹ 12,000+", cat: "Modern Stack", image: "nextjs.png" },
-  { name: "Custom React Website", price: "₹ 8,000+", cat: "Modern Stack", image: "react.png" },
-  { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "tailwind.png" },
+  { name: "Custom Next.js Website", price: "₹ 12,000+", cat: "Modern Stack", image: "/nextjs.png" },
+  { name: "Custom React Website", price: "₹ 8,000+", cat: "Modern Stack", image: "/react.png" },
+  { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "/tailwind.png" },
 
-  // --- WORDPRESS & CMS ---
-  { name: "Simple WordPress Setup", price: "₹ 5,000", cat: "CMS", image: "wordpress.png" },
-  { name: "Advanced Elementor Pro Site", price: "₹ 8,000+", cat: "CMS", image: "elementor.png" },
-  { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "speed.png" },
-  { name: "Malware Removal & Security", price: "₹ 1,500", cat: "Maintenance", image: "security.png" },
+  { name: "Simple WordPress Setup", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
+  { name: "Advanced Elementor Pro Site", price: "₹ 8,000+", cat: "CMS", image: "/elementor.png" },
+  { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/speed.png" },
+  { name: "Malware Removal & Security", price: "₹ 1,500", cat: "Maintenance", image: "/security.png" },
 
-  // --- E-COMMERCE ---
-  { name: "WooCommerce Store Setup", price: "₹ 12,000+", cat: "E-Com", image: "woocommerce.png" },
-  { name: "Shopify Custom Liquid Theme", price: "₹ 8,000+", cat: "E-Com", image: "shopify.png" },
-  { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "payment.png" },
+  { name: "WooCommerce Store Setup", price: "₹ 12,000+", cat: "E-Com", image: "/woocommerce.png" },
+  { name: "Shopify Custom Liquid Theme", price: "₹ 8,000+", cat: "E-Com", image: "/shopify.png" },
+  { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
 
-  // --- MARKETING & SEO ---
-  { name: "SEO Audit & Internal Links", price: "₹ 4,000", cat: "Marketing", image: "seo.png" },
-  { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "seo2.png" },
-  { name: "Digital Marketing Strategy", price: "₹ 5,000+", cat: "Marketing", image: "marketing.png" },
-  { name: "Google Analytics & GSC Setup", price: "₹ 2,000", cat: "Marketing", image: "analytics.png" },
+  { name: "SEO Audit & Internal Links", price: "₹ 4,000", cat: "Marketing", image: "/seo.png" },
+  { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "/seo2.png" },
+  { name: "Digital Marketing Strategy", price: "₹ 5,000+", cat: "Marketing", image: "/marketing.png" },
+  { name: "Google Analytics & GSC Setup", price: "₹ 2,000", cat: "Marketing", image: "/analytics.png" },
 
-  // --- CUSTOM DEV & BACKEND ---
-  { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "laravel.png" },
-  { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "api.png" },
-  { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "database.png" },
+  { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "/laravel.png" },
+  { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "/api.png" },
+  { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "/database.png" },
 ]
 
   const faqs = [
