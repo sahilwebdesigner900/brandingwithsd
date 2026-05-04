@@ -50,7 +50,7 @@ export default function ContactPage() {
   return (
     <div className="bg-background text-foreground transition-colors duration-300">
       <Navigation />
-      
+
       <main className="relative min-h-screen overflow-hidden">
         {/* Background Decorative Blobs */}
         <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-50" />
@@ -59,7 +59,7 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section className="relative pt-20 pb-12 md:pt-32 md:pb-20">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center space-y-4"
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 Let's Build Something <span className="text-primary">Great</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Have a project in mind or just want to say hi? We'd love to hear from you. 
+                Have a project in mind or just want to say hi? We'd love to hear from you.
                 Our team usually responds within 24 hours.
               </p>
             </motion.div>
@@ -78,9 +78,9 @@ export default function ContactPage() {
         <section className="pb-24 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              
+
               {/* Left Side: Contact Info */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -88,13 +88,13 @@ export default function ContactPage() {
               >
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold italic border-l-4 border-primary pl-4">Contact Details</h3>
-                  
+
                   {[
                     { icon: Mail, label: "Email", value: "sahilwebdesigner900@gmail.com", href: "mailto:sahilwebdesigner900@gmail.com" },
                     { icon: Phone, label: "Phone", value: "+91 76259 03382", href: "tel:+917625903382" },
                     { icon: MapPin, label: "Office", value: "Global Presence: IN / AU / CA / UAE", href: null },
                   ].map((item, idx) => (
-                    <motion.div 
+                    <motion.div
                       key={idx}
                       whileHover={{ x: 10 }}
                       className="flex items-center gap-5 p-4 rounded-xl bg-card border border-border/50 shadow-sm"
@@ -136,7 +136,7 @@ export default function ContactPage() {
               </motion.div>
 
               {/* Right Side: Form */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -207,7 +207,7 @@ export default function ContactPage() {
                         countryCodeEditable={false}
                         onlyCountries={undefined}
                         // onlyCountries={['au', 'ar', 'us', 'in', 'gb']} // restrict to these countries
-                        preferredCountries={['au', 'us' , 'in' , 'ae']}               // top of list
+                        preferredCountries={['au', 'us', 'in', 'ae']}               // top of list
                         disableDropdown={false}
                       />
                     </div>
@@ -231,7 +231,7 @@ export default function ContactPage() {
                     </p>
                   )}
 
-                  <Button 
+                  <Button
                     disabled={loading}
                     className="w-full h-14 text-lg font-bold rounded-xl shadow-lg shadow-primary/20 transition-transform active:scale-[0.98]"
                   >
@@ -250,7 +250,7 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <WhatsAppButton/>
+      <WhatsAppButton />
       <Footer />
 
       {/* Custom styles for the Phone Input to match dark mode */}
