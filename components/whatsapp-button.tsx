@@ -12,18 +12,17 @@ export default function WhatsAppButton() {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 rounded-full p-3 shadow-lg flex items-center justify-center"
+      className="fixed bottom-6 right-6 z-40 flex items-center justify-center"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.5 }}
-    >
+      transition={{ delay: 0.5 }}>
       <Image
         src="/whatsapp.svg"
         alt="WhatsApp"
-        width={48}
-        height={48}
+        width={56}
+        height={56}
         priority
       />
     </motion.a>

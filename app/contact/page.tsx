@@ -88,7 +88,6 @@ export default function ContactPage() {
               >
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold italic border-l-4 border-primary pl-4">Contact Details</h3>
-
                   {[
                     { icon: Mail, label: "Email", value: "sahilwebdesigner900@gmail.com", href: "mailto:sahilwebdesigner900@gmail.com" },
                     { icon: Phone, label: "Phone", value: "+91 76259 03382", href: "tel:+917625903382" },
@@ -134,7 +133,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </motion.div>
-
               {/* Right Side: Form */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
