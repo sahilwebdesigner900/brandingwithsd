@@ -10,28 +10,28 @@ import Link from "next/link"
 
 const projects = [
   {
-    title: "Business Website",
-    desc: "Modern responsive business website with clean UI.",
-    image: "/project1.png",
-    link: "https://sahilwebdesigner900.github.io/portfolio/",
+    title: "Outreach Auto Works",
+    desc: "Expert Car Repair & Auto Maintenance in Adelaide",
+    image: "/portfolio/outreachautoworks.png",
+    link: "https://outreachautoworks.com/",
   },
   {
-    title: "E-commerce Store",
-    desc: "Fully functional online store with payment integration.",
-    image: "/project2.png",
-    link: "https://sahilwebdesigner900.github.io/portfolio/",
+    title: "Heros Fashion",
+    desc: "At Hero’s, we don’t just print patterns — we tell stories, one block at a time.",
+    image: "/portfolio/herosfashion-portfolio.jpg",
+    link: "https://herosfashion.com/",
   },
   {
-    title: "Landing Page",
-    desc: "High-converting landing page for marketing campaigns.",
-    image: "/project3.png",
-    link: "https://sahilwebdesigner900.github.io/portfolio/",
+    title: "Sukoji Elevator",
+    desc: "Sukoji Elevator offers complete lift solutions—installation, maintenance, and repairs for passenger, home, car, goods, hospital, MRL, and capsule lifts across Delhi, Gurugram, Karnal, Sonipat and Panipat.",
+    image: "/portfolio/sukoji.png",
+    link: "https://sukoji.com/",
   },
   {
-    title: "Portfolio Website",
-    desc: "Personal portfolio with modern animations.",
-    image: "/project4.png",
-    link: "https://sahilwebdesigner900.github.io/portfolio/",
+    title: "Glossnroll",
+    desc: "House Painters & Decorator in Adelaide | Wall Painter",
+    image: "/portfolio/glossnroll.png",
+    link: "https://glossnroll.com.au/",
   },
 ]
 export default function portfolioPage() {
@@ -80,10 +80,9 @@ export default function portfolioPage() {
           </div>
         </div>
 
-        {/* --- SECTION 3: FEATURED PROJECTS --- */}
+        {/* --- SECTION 3: PROJECTS --- */}
         <section className="pb-28 px-6">
           <div className="max-w-7xl mx-auto">
-
             {/* 🔥 SECTION HEADER */}
             <div className="mb-16 text-center">
               <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
