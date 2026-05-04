@@ -5,6 +5,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 const projects = [
   {
@@ -32,7 +33,7 @@ const projects = [
     link: "https://glossnroll.com.au/",
   },
 ]
-export default function portfolioPage() {
+export default function PortfolioPage() {
   return (
     <>
       <Navigation />
