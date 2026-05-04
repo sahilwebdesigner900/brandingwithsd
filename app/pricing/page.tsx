@@ -261,12 +261,11 @@ export default function FullPricingPage() {
                 >
                   {/* 🖼️ LOGO CENTER */}
                   <div className="flex justify-center mb-8">
-                    <div className="w-20 h-20 flex items-center justify-center 
-                    rounded-2xl bg-slate-100 dark:bg-slate-800">
+                    <div className="flex items-center justify-center">
                       <img
                         src={service.image}
                         alt={service.name}
-                        className="w-10 h-10 object-contain"
+                        className="w-20 h-20 object-contain"
                       />
                     </div>
                   </div>
