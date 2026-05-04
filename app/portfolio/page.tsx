@@ -4,10 +4,8 @@ import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
-import { CaseStudyCard } from "@/components/case-study-card"
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react"
 import Link from "next/link"
-
 const projects = [
   {
     title: "Outreach Auto Works",
@@ -39,11 +37,9 @@ export default function portfolioPage() {
     <>
       <Navigation />
       <main className="min-h-screen bg-[#F8FAFC] text-slate-900 transition-colors duration-300">
-
         {/* --- SECTION 1: ELEGANT LIGHT HERO --- */}
         <section className="relative py-16 md:py-40 overflow-hidden bg-white">
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-
           <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] md:text-xs uppercase tracking-widest mb-6 md:mb-8">
