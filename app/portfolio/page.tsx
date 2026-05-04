@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "Sukoji Elevator",
-    desc: "Sukoji Elevator offers complete lift solutions—installation, maintenance, and repairs for passenger, home, car, goods, hospital, MRL, and capsule lifts across Delhi, Gurugram, Karnal, Sonipat and Panipat.",
+    desc: "Sukoji Elevator offers complete lift solutions—installation, maintenance, and repairs",
     image: "/portfolio/sukoji.png",
     link: "https://sukoji.com/",
   },
@@ -78,7 +78,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* --- SECTION 3: PROJECTS --- */}
-        <section className="pb-28 px-6">
+        <section className="py-20 px-6">
           <div className="max-w-7xl mx-auto">
 
             {/* 🔥 HEADER */}
@@ -109,7 +109,7 @@ export default function PortfolioPage() {
                 >
 
                   {/* 🖼️ IMAGE */}
-                  <div className="relative w-full h-56">
+                  <div className="relative w-full h-72">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -137,7 +137,7 @@ export default function PortfolioPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm"
                     >
-                      View Project
+                      {project.link} 
                       <ArrowRight size={16} />
                     </a>
 
