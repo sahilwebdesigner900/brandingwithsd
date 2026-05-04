@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { 
-  Check, ArrowRight, Zap, ShieldCheck, Globe, Star, 
-  HelpCircle, Plus, Minus, Search, Code2, ShoppingCart, 
-  BarChart3, Rocket, MessageSquare 
+import {
+  Check, ArrowRight, Zap, ShieldCheck, Globe, Star,
+  HelpCircle, Plus, Minus, Search, Code2, ShoppingCart,
+  BarChart3, Rocket, MessageSquare
 } from "lucide-react"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
@@ -82,33 +82,33 @@ export default function FullPricingPage() {
   ]
 
   const standaloneServices = [
-    // --- MODERN WEB STACK ---
-    { name: "Custom Next.js Website", price: "₹ 12,000+", cat: "Modern Stack", icon: Rocket },
-    { name: "Custom React Website", price: "₹ 8,000+", cat: "Modern Stack", icon: Code2 },
-    { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", icon: Zap },
-    
-    // --- WORDPRESS & CMS ---
-    { name: "Simple WordPress Setup", price: "₹ 5,000", cat: "CMS", icon: Globe },
-    { name: "Advanced Elementor Pro Site", price: "₹ 8,000+", cat: "CMS", icon: Globe },
-    { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", icon: Zap },
-    { name: "Malware Removal & Security", price: "₹ 1,500", cat: "Maintenance", icon: ShieldCheck },
-  
-    // --- E-COMMERCE ---
-    { name: "WooCommerce Store Setup", price: "₹ 12,000+", cat: "E-Com", icon: ShoppingCart },
-    { name: "Shopify Custom Liquid Theme", price: "₹ 8,000+", cat: "E-Com", icon: ShoppingCart },
-    { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", icon: ShieldCheck },
-  
-    // --- MARKETING & SEO ---
-    { name: "SEO Audit & Internal Links", price: "₹ 4,000", cat: "Marketing", icon: BarChart3 },
-    { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", icon: BarChart3 },
-    { name: "Digital Marketing Strategy", price: "₹ 5,000+", cat: "Marketing", icon: Zap },
-    { name: "Google Analytics & GSC Setup", price: "₹ 2,000", cat: "Marketing", icon: BarChart3 },
-  
-    // --- CUSTOM DEV & BACKEND ---
-    { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", icon: Code2 },
-    { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", icon: Code2 },
-    { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", icon: Code2 },
-  ];
+  // --- MODERN WEB STACK ---
+  { name: "Custom Next.js Website", price: "₹ 12,000+", cat: "Modern Stack", image: "nextjs.png" },
+  { name: "Custom React Website", price: "₹ 8,000+", cat: "Modern Stack", image: "react.png" },
+  { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "tailwind.png" },
+
+  // --- WORDPRESS & CMS ---
+  { name: "Simple WordPress Setup", price: "₹ 5,000", cat: "CMS", image: "wordpress.png" },
+  { name: "Advanced Elementor Pro Site", price: "₹ 8,000+", cat: "CMS", image: "elementor.png" },
+  { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "speed.png" },
+  { name: "Malware Removal & Security", price: "₹ 1,500", cat: "Maintenance", image: "security.png" },
+
+  // --- E-COMMERCE ---
+  { name: "WooCommerce Store Setup", price: "₹ 12,000+", cat: "E-Com", image: "woocommerce.png" },
+  { name: "Shopify Custom Liquid Theme", price: "₹ 8,000+", cat: "E-Com", image: "shopify.png" },
+  { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "payment.png" },
+
+  // --- MARKETING & SEO ---
+  { name: "SEO Audit & Internal Links", price: "₹ 4,000", cat: "Marketing", image: "seo.png" },
+  { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "seo2.png" },
+  { name: "Digital Marketing Strategy", price: "₹ 5,000+", cat: "Marketing", image: "marketing.png" },
+  { name: "Google Analytics & GSC Setup", price: "₹ 2,000", cat: "Marketing", image: "analytics.png" },
+
+  // --- CUSTOM DEV & BACKEND ---
+  { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "laravel.png" },
+  { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "api.png" },
+  { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "database.png" },
+]
 
   const faqs = [
     { question: "What do I need to get started?", answer: "We just need your business details, logo, and any reference websites. We handle the content and images if you don't have them." },
@@ -116,7 +116,7 @@ export default function FullPricingPage() {
     { question: "Can I upgrade my plan later?", answer: "Absolutely. You can scale from Standard to Pro or E-commerce at any time by just paying the difference." },
   ]
 
-  const filteredServices = standaloneServices.filter(s => 
+  const filteredServices = standaloneServices.filter(s =>
     s.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
@@ -132,21 +132,19 @@ export default function FullPricingPage() {
         <div className="relative z-10 max-w-full mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-2xl md:text-6xl font-black tracking-tighter mb-10 leading-[0.9]">
-            Affordable WordPress <br />
+              Affordable WordPress <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Website</span>
             </h1>
-            
+
             <div className="inline-flex p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 backdrop-blur-md">
               {["USD", "INR", "AUD"].map((cur) => (
                 <button
                   key={cur}
                   onClick={() => setCurrency(cur as CurrencyType)}
-                  className={`px-6 py-2 rounded-xl text-sm font-black transition-all ${
-                    currency === cur 
-                    ? "bg-white dark:bg-slate-800 text-blue-600 shadow-xl scale-105" 
-                    : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
-                  }`}
-                >
+                  className={`px-6 py-2 rounded-xl text-sm font-black transition-all ${currency === cur
+                      ? "bg-white dark:bg-slate-800 text-blue-600 shadow-xl scale-105"
+                      : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
+                    }`} >
                   {cur}
                 </button>
               ))}
@@ -166,11 +164,10 @@ export default function FullPricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative p-8 md:p-12 rounded-[3.5rem] border transition-all duration-500 hover:translate-y-[-10px] ${
-                  plan.popular 
-                  ? "bg-slate-950 text-white border-blue-500 shadow-[0_30px_60px_-15px_rgba(37,99,235,0.3)] scale-105" 
-                  : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 shadow-xl"
-                }`}
+                className={`relative p-8 md:p-12 rounded-[3.5rem] border transition-all duration-500 hover:translate-y-[-10px] ${plan.popular
+                    ? "bg-slate-950 text-white border-blue-500 shadow-[0_30px_60px_-15px_rgba(37,99,235,0.3)] scale-105"
+                    : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 shadow-xl"
+                  }`}
               >
                 {plan.popular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">
@@ -192,9 +189,8 @@ export default function FullPricingPage() {
                 </div>
 
                 <Link href="/contact" className="block mb-10">
-                  <button className={`w-full py-5 rounded-2xl font-black text-lg transition-all flex items-center justify-center gap-2 group ${
-                    plan.popular ? "bg-blue-600 hover:bg-blue-500 text-white" : "bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10"
-                  }`}>
+                  <button className={`w-full py-5 rounded-2xl font-black text-lg transition-all flex items-center justify-center gap-2 group ${plan.popular ? "bg-blue-600 hover:bg-blue-500 text-white" : "bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10"
+                    }`}>
                     {plan.cta} <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                   </button>
                 </Link>
@@ -216,25 +212,25 @@ export default function FullPricingPage() {
           {/* BONUS VALUE BAR */}
           <div className="mt-20 p-10 rounded-[3rem] bg-blue-600/5 border border-blue-500/10 flex flex-wrap justify-around gap-10 items-center">
             <div className="flex items-center gap-4">
-               <ShieldCheck className="text-blue-600" size={32} />
-               <div>
-                 <p className="text-xs font-black uppercase tracking-widest text-blue-600">Maintenance</p>
-                 <p className="font-bold">12 Months Included</p>
-               </div>
+              <ShieldCheck className="text-blue-600" size={32} />
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-blue-600">Maintenance</p>
+                <p className="font-bold">12 Months Included</p>
+              </div>
             </div>
             <div className="flex items-center gap-4">
-               <Globe className="text-blue-600" size={32} />
-               <div>
-                 <p className="text-xs font-black uppercase tracking-widest text-blue-600">Free Hosting</p>
-                 <p className="font-bold">High-Speed SSD</p>
-               </div>
+              <Globe className="text-blue-600" size={32} />
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-blue-600">Free Hosting</p>
+                <p className="font-bold">High-Speed SSD</p>
+              </div>
             </div>
             <div className="flex items-center gap-4">
-               <Zap className="text-blue-600" size={32} />
-               <div>
-                 <p className="text-xs font-black uppercase tracking-widest text-blue-600">Delivery</p>
-                 <p className="font-bold">5-14 Business Days</p>
-               </div>
+              <Zap className="text-blue-600" size={32} />
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-blue-600">Delivery</p>
+                <p className="font-bold">5-14 Business Days</p>
+              </div>
             </div>
           </div>
         </div>
@@ -250,39 +246,85 @@ export default function FullPricingPage() {
             </div>
             <div className="relative w-full md:w-96">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-              <input 
-                type="text" 
-                placeholder="Find a service..." 
+              <input
+                type="text"
+                placeholder="Find a service..."
                 className="w-full pl-12 pr-6 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+                onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="popLayout">
-              {filteredServices.map((service, i) => (
+              {filteredServices.map((service: any, i: number) => (
+
                 <motion.div
                   layout
                   key={service.name}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="group p-8 rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-blue-500 transition-all"
-                >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                      <service.icon size={24} />
-                    </div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">{service.cat}</span>
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.4 }}
+
+                  className={`group relative p-8 rounded-[2.5rem] overflow-hidden transition-all duration-500
+            backdrop-blur-xl border
+            ${i === 1 ? "bg-gradient-to-br from-blue-600 to-indigo-600 text-white border-transparent shadow-2xl"
+                      : "bg-white/80 dark:bg-slate-900/80 border-slate-200 dark:border-slate-800 hover:border-blue-500" }`}>
+                  {/* 🔥 Glow Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none">
+                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-40 bg-blue-500/20 blur-3xl"></div>
                   </div>
-                  <h4 className="text-xl font-black mb-2">{service.name}</h4>
-                  <p className="text-3xl font-black text-blue-600 mb-6">{service.price}</p>
+
+                  {/* ⭐ Most Popular Badge */}
+                  {i === 1 && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-blue-600 text-xs font-bold px-4 py-1 rounded-full shadow-md">
+                      Most Popular
+                    </div>
+                  )}
+
+                  {/* 🖼️ Logo + Category */}
+                  <div className="flex justify-between items-start mb-6">
+                    <div
+                      className={`p-4 rounded-2xl flex items-center justify-center transition-all
+                      ${ i === 1 ? "bg-white/20" : "bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-600" }`} >
+                      <Image
+                        src={service.image}
+                        alt={service.name}
+                        width={30}
+                        height={30}
+                        className={`object-contain transition-all ${
+                          i === 1 ? "invert brightness-200" : "group-hover:invert"
+                        }`}
+                      />
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">
+                      {service.cat}
+                    </span>
+                  </div>
+
+                  {/* 🧠 Title */}
+                  <h4 className="text-xl font-extrabold mb-2 tracking-tight">
+                    {service.name}
+                  </h4>
+
+                  {/* 💰 Price */}
+                  <p className={`text-4xl font-black mb-6 tracking-tight ${i === 1 ? "text-white" : "text-blue-600" }`} >
+                    {service.price}
+                  </p>
+
+                  {/* 🚀 CTA */}
                   <Link href="/contact">
-                    <button className="text-sm font-black uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all">
-                      Book Now <ArrowRight size={16} />
+                    <button
+                      className={`w-full py-3 rounded-xl text-sm font-bold uppercase tracking-widest 
+                flex items-center justify-center gap-2 transition-all duration-300
+                ${i === 1  ? "bg-white text-blue-600 hover:bg-slate-100" : "bg-blue-600 text-white hover:bg-blue-700" }`} >
+                      Get Started <ArrowRight size={16} />
                     </button>
                   </Link>
+
+                  {/* 🔥 Bottom line animation */}
+                  <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-600 group-hover:w-full transition-all duration-500"></div>
+
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -294,14 +336,13 @@ export default function FullPricingPage() {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-center mb-16">Pricing <span className="text-blue-600">FAQ's</span></h2>
-          
+
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div 
-                key={i} 
-                className={`rounded-[2rem] border transition-all duration-500 ${
-                  openFaq === i ? "bg-white dark:bg-slate-900 border-blue-500/50 shadow-2xl" : "border-slate-100 dark:border-slate-800"
-                }`}
+              <div
+                key={i}
+                className={`rounded-[2rem] border transition-all duration-500 ${openFaq === i ? "bg-white dark:bg-slate-900 border-blue-500/50 shadow-2xl" : "border-slate-100 dark:border-slate-800"
+                  }`}
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
