@@ -251,90 +251,49 @@ export default function FullPricingPage() {
          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="popLayout">
               {filteredServices.map((service: any, i: number) => (
-                <motion.div
+                
+                <div
                   key={service.name}
-                  layout
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.4 }}
-
-                  className={`group relative p-8 rounded-[2.5rem] overflow-hidden transition-all duration-500 backdrop-blur-xl border
-                  ${
-                    i === 1
-                      ? "bg-gradient-to-br from-blue-600 to-indigo-600 text-white border-transparent shadow-2xl"
-                      : "bg-white/80 dark:bg-slate-900/80 border-slate-200 dark:border-slate-800 hover:border-blue-500"
-                  }`}
+                  className="p-10 rounded-[2.5rem] text-center 
+                  bg-white dark:bg-slate-900 
+                  border border-slate-200 dark:border-slate-800
+                  shadow-sm"
                 >
-
-                  {/* 🔥 Glow Effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none">
-                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-40 bg-blue-500/20 blur-3xl" />
-                  </div>
-
-                  {/* ⭐ Badge */}
-                  {i === 1 && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-blue-600 text-xs font-bold px-4 py-1 rounded-full shadow-md">
-                      Most Popular
-                    </div>
-                  )}
-
-                  {/* 🖼️ Image + Category */}
-                  <div className="flex justify-between items-start mb-6">
-                    <div
-                      className={`p-4 rounded-2xl flex items-center justify-center transition-all
-                      ${
-                        i === 1
-                          ? "bg-white/20"
-                          : "bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-600"
-                      }`}
-                    >
+                  {/* 🖼️ LOGO CENTER */}
+                  <div className="flex justify-center mb-8">
+                    <div className="w-20 h-20 flex items-center justify-center 
+                    rounded-2xl bg-slate-100 dark:bg-slate-800">
                       <img
-                        src={service.image}   // ✅ works with /public images
+                        src={service.image}
                         alt={service.name}
-                        className={`w-8 h-8 object-contain transition-all
-                        ${i === 1 ? "invert brightness-200" : "group-hover:invert"}`}
+                        className="w-10 h-10 object-contain"
                       />
                     </div>
-
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">
-                      {service.cat}
-                    </span>
                   </div>
-
-                  {/* 🧠 Title */}
-                  <h4 className="text-xl font-extrabold mb-2 tracking-tight">
+                  {/* 🧠 TITLE */}
+                  <h4 className="text-2xl font-bold mb-3 tracking-tight">
                     {service.name}
                   </h4>
+                  {/* CATEGORY */}
+                  <p className="text-xs uppercase tracking-widest text-slate-400 mb-4">
+                    {service.cat}
+                  </p>
 
-                  {/* 💰 Price */}
-                  <p
-                    className={`text-4xl font-black mb-6 tracking-tight ${
-                      i === 1 ? "text-white" : "text-blue-600"
-                    }`}
-                  >
+                  {/* 💰 PRICE */}
+                  <p className="text-3xl font-black text-blue-600 mb-8">
                     {service.price}
                   </p>
 
-                  {/* 🚀 CTA */}
+                  {/* CTA */}
                   <Link href="/contact">
-                    <button
-                      className={`w-full py-3 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300
-                      ${
-                        i === 1
-                          ? "bg-white text-blue-600 hover:bg-slate-100"
-                          : "bg-blue-600 text-white hover:bg-blue-700"
-                      }`}
-                    >
-                      Get Started <ArrowRight size={16} />
+                    <button className="w-full py-3 rounded-xl 
+                    bg-blue-600 text-white font-semibold text-sm 
+                    transition-all">
+                      Get Started
                     </button>
                   </Link>
 
-                  {/* 🔥 Bottom Line Animation */}
-                  <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-600 group-hover:w-full transition-all duration-500" />
-
-                </motion.div>
+                </div>
               ))}
             </AnimatePresence>
           </div>
