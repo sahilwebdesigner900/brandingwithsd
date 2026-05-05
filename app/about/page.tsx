@@ -14,12 +14,13 @@ import { Button } from "@/components/ui/button"
 // --- Data ---
 
 const teamMembers = [
-  { name: "Sahil Dutt", role: "Founder", image: "/team/webdesigner.webp" },
-  { name: "Vishal Dutt", role: "CEO", image: "/team/webdesigner.webp" },
-  { name: "Amritpal Singh", role: "Head of SEO", image: "/team/seoexpert.webp" },
-  { name: "Sumitpal Singh", role: "Senier Designer", image: "/team/sumitpal.webp" },
-  { name: "Re", role: "Strategy Lead", image: "https://i.pravatar.cc/400?u=4" },
-  { name: "David Park", role: "Technical Architect", image: "https://i.pravatar.cc/400?u=5" },
+  { name: "Sahil Dutt", role: "Founder & Lead Designer/Developer", image: "/team/webdesigner.webp" },
+  { name: "Taniya", role: "Manager", image: "/team/webdesigner.webp" },
+  { name: "Amritpal Singh", role: "SEO Specialist", image: "/team/seoexpert.webp" },
+  { name: "Sumitpal Singh", role: "Senior Designer", image: "/team/sumitpal.webp" },
+  { name: "Fateh", role: "Digital Marketing Strategist", image: "https://i.pravatar.cc/400?u=4" },
+  { name: "", role: "Full Stack Developer", image: "https://i.pravatar.cc/400?u=5" },
+  { name: "Gagan", role: "Web Hosting Manager", image: "https://i.pravatar.cc/400?u=5" },
 ]
 const testimonials = [
   {
