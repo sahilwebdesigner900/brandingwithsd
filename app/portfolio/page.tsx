@@ -37,7 +37,7 @@ const projects = [
     category: "react",
   },
 ]
-export default function PortfolioPage() {\
+export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState("all")
   const filteredProjects = activeTab === "all" ? projects : projects.filter((p) => p.category === activeTab)
   return (
@@ -126,7 +126,7 @@ export default function PortfolioPage() {\
 
               {filteredProjects.map((project, i) => (
                 <motion.div
-                  key={i}
+                  key={project.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
@@ -162,7 +162,7 @@ export default function PortfolioPage() {\
                       rel="noopener noreferrer"
                       className="text-blue-600 text-sm font-semibold"
                     >
-                      View Project →
+                      View Project <ArrowRight size={14} />
                     </a>
                   </div>
                 </motion.div>
