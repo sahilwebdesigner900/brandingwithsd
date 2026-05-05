@@ -51,76 +51,76 @@ const testimonials = [
 
 // --- Team Carousel Component (Hover Stop + Right-Click Drag) ---
 
-function TeamCarousel() {
-  const [isPaused, setIsPaused] = useState(false);
-  const x = useMotionValue(0);
-  // springX makes the manual dragging feel smooth and premium
-  const springX = useSpring(x, { stiffness: 300, damping: 30 });
+// function TeamCarousel() {
+//   const [isPaused, setIsPaused] = useState(false);
+//   const x = useMotionValue(0);
+//   // springX makes the manual dragging feel smooth and premium
+//   const springX = useSpring(x, { stiffness: 300, damping: 30 });
 
-  const handlePointerDown = (e: React.PointerEvent) => {
-    if (e.button !== 2) return; // Only trigger on Right Click
+//   const handlePointerDown = (e: React.PointerEvent) => {
+//     if (e.button !== 2) return; // Only trigger on Right Click
 
-    const startX = e.pageX - x.get();
+//     const startX = e.pageX - x.get();
 
-    const handlePointerMove = (moveEvent: PointerEvent) => {
-      x.set(moveEvent.pageX - startX);
-    };
+//     const handlePointerMove = (moveEvent: PointerEvent) => {
+//       x.set(moveEvent.pageX - startX);
+//     };
 
-    const handlePointerUp = () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
+//     const handlePointerUp = () => {
+//       window.removeEventListener("pointermove", handlePointerMove);
+//       window.removeEventListener("pointerup", handlePointerUp);
+//     };
 
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
-  };
+//     window.addEventListener("pointermove", handlePointerMove);
+//     window.addEventListener("pointerup", handlePointerUp);
+//   };
 
-  return (
-    <section
-      onContextMenu={(e) => e.preventDefault()} // Disables right-click menu
-      className="py-20 bg-secondary/30 border-y border-border overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <h2 className="text-4xl font-black tracking-tighter uppercase italic">Meet the Visionaries</h2>
-        <p className="text-[10px] uppercase tracking-widest opacity-40 mt-2 italic">Right-click & drag to move manually</p>
-      </div>
+//   return (
+//     <section
+//       onContextMenu={(e) => e.preventDefault()} // Disables right-click menu
+//       className="py-20 bg-secondary/30 border-y border-border overflow-hidden"
+//     >
+//       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
+//         <h2 className="text-4xl font-black tracking-tighter uppercase italic">Meet the Visionaries</h2>
+//         <p className="text-[10px] uppercase tracking-widest opacity-40 mt-2 italic">Right-click & drag to move manually</p>
+//       </div>
 
-      <div
-        className="flex gap-8 group cursor-grab active:cursor-grabbing"
-        onPointerEnter={() => setIsPaused(true)}  // Stops animation on mouse hover
-        onPointerLeave={() => setIsPaused(false)} // Resumes animation on mouse leave
-        onPointerDown={handlePointerDown}
-      >
-        <motion.div
-          className="flex gap-8 whitespace-nowrap"
-          style={{ x: springX }}
-          animate={isPaused ? {} : { x: [0, -1800] }} // Toggle between moving and still
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          {teamMembers.map((member, i) => (
-            <div key={i} className="w-[300px] flex-shrink-0 bg-card rounded-[2.5rem] p-4 border border-border shadow-xl hover:border-primary/50 transition-all group/card">
-              <div className="overflow-hidden rounded-[2rem] mb-6 aspect-square">
-                <img
-                  src={member.image}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-110"
-                  alt={member.name}
-                />
-              </div>
-              <div className="text-center pb-4">
-                <h4 className="text-xl font-bold tracking-tight">{member.name}</h4>
-                <p className="text-primary text-sm font-semibold uppercase tracking-widest mt-1">{member.role}</p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
+//       <div
+//         className="flex gap-8 group cursor-grab active:cursor-grabbing"
+//         onPointerEnter={() => setIsPaused(true)}  // Stops animation on mouse hover
+//         onPointerLeave={() => setIsPaused(false)} // Resumes animation on mouse leave
+//         onPointerDown={handlePointerDown}
+//       >
+//         <motion.div
+//           className="flex gap-8 whitespace-nowrap"
+//           style={{ x: springX }}
+//           animate={isPaused ? {} : { x: [0, -1800] }} // Toggle between moving and still
+//           transition={{
+//             duration: 40,
+//             repeat: Infinity,
+//             ease: "linear"
+//           }}
+//         >
+//           {teamMembers.map((member, i) => (
+//             <div key={i} className="w-[300px] flex-shrink-0 bg-card rounded-[2.5rem] p-4 border border-border shadow-xl hover:border-primary/50 transition-all group/card">
+//               <div className="overflow-hidden rounded-[2rem] mb-6 aspect-square">
+//                 <img
+//                   src={member.image}
+//                   className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-110"
+//                   alt={member.name}
+//                 />
+//               </div>
+//               <div className="text-center pb-4">
+//                 <h4 className="text-xl font-bold tracking-tight">{member.name}</h4>
+//                 <p className="text-primary text-sm font-semibold uppercase tracking-widest mt-1">{member.role}</p>
+//               </div>
+//             </div>
+//           ))}
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// }
 
 // --- Main Page Component ---
 
@@ -137,10 +137,10 @@ export default function AboutPage() {
       <main className="min-h-screen space-y-32 pb-24">
 
         {/* HERO SECTION */}
-        {/* <section className="pt-32 px-6">
+        <section className="pt-32 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }}
                 className="space-y-8"
               >
@@ -158,22 +158,21 @@ export default function AboutPage() {
                   More than an agency, we are your technical partners in scaling the next generation of global brands.
                 </p>
               </motion.div>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
                 className="relative aspect-square bg-gradient-to-tr from-primary to-accent rounded-[4rem] rotate-3 overflow-hidden hidden lg:block"
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" 
-                  className="w-full h-full object-cover mix-blend-overlay opacity-80 -rotate-3 scale-110" 
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+                  className="w-full h-full object-cover mix-blend-overlay opacity-80 -rotate-3 scale-110"
                   alt="Team collaboration"
                 />
               </motion.div>
             </div>
           </div>
-        </section> */}
+        </section>
         {/* HERO SECTION */}
         <section className="relative pt-32 pb-0 px-6 overflow-hidden min-h-[90vh] flex items-center mb-0">
-
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
             <img
@@ -223,7 +222,72 @@ export default function AboutPage() {
         </section>
 
         {/* TEAM CAROUSEL SECTION */}
-        <TeamCarousel />
+        {/* <TeamCarousel /> */}
+        <section className="py-20 bg-secondary/30 border-y border-border overflow-hidden">
+
+          {/* HEADER */}
+          <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
+            <h2 className="text-4xl font-black tracking-tighter uppercase italic">
+              Meet the Visionaries
+            </h2>
+            <p className="text-xs uppercase tracking-widest opacity-40 mt-2 italic">
+              Drag or swipe to explore
+            </p>
+          </div>
+
+          {/* CAROUSEL WRAPPER */}
+          <div
+            className="overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+
+            <motion.div
+              className="flex gap-8 w-max cursor-grab active:cursor-grabbing"
+
+              drag="x"
+              dragConstraints={{ left: -1600, right: 0 }}
+              dragElastic={0.05}
+
+              animate={isPaused ? {} : { x: ["0%", "-50%"] }}
+
+              transition={{
+                duration: 25,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {[...teamMembers, ...teamMembers].map((member, i) => (
+                <div
+                  key={i}
+                  className="w-[300px] flex-shrink-0 bg-white dark:bg-slate-900 rounded-[2rem] p-5 border border-slate-200 dark:border-slate-800 shadow-sm"
+                >
+
+                  {/* IMAGE */}
+                  <div className="overflow-hidden rounded-[1.5rem] mb-5 aspect-square">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* TEXT */}
+                  <div className="text-center">
+                    <h4 className="text-lg font-bold">
+                      {member.name}
+                    </h4>
+                    <p className="text-blue-600 text-xs font-semibold uppercase tracking-wider mt-1">
+                      {member.role}
+                    </p>
+                  </div>
+
+                </div>
+              ))}
+            </motion.div>
+
+          </div>
+        </section>
 
         {/* WORKFLOW SECTION */}
         <section className="max-w-7xl mx-auto px-6">
@@ -407,8 +471,8 @@ export default function AboutPage() {
         </section>
 
       </main>
-      <SocialProof/>
-      <WhatsAppButton/>
+      <SocialProof />
+      <WhatsAppButton />
       <Footer />
     </div>
   )
