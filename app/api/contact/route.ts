@@ -39,84 +39,83 @@ export async function POST(req: Request) {
       subject: "New Contact Form Message - Brandingwithsd",
 
       html: `
-      <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:20px;font-family:Arial, sans-serif;">
-        <tr>
-          <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="background:#0f172a;padding:20px 10px;">
+          <tr>
+            <td align="center">
+              <!-- MAIN CONTAINER -->
+              <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.2);">
+                <!-- HEADER -->
+                <tr>
+                  <td align="center" style="padding:20px;">
+                    <img src="https://brandingwithsd.vercel.app/logo.png" width="160" alt="Branding With SD" style="display:block;" />
+                  </td>
+                </tr>
+                <!-- TITLE -->
+                <tr>
+                  <td style="padding:30px 30px 10px 30px;">
+                    <h2 style="margin:0;font-size:24px;color:#111827;">📩 New Contact Message</h2>
+                    <p style="margin-top:8px;color:#6b7280;font-size:15px;">
+                      You received a new inquiry from your website.
+                    </p>
+                  </td>
+                </tr>
+                <!-- INFO CARD -->
+                <tr>
+                  <td style="padding:20px 30px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9fafb;border-radius:12px;padding:20px;font-size:14px;color:#111827;">
+                      <tr>
+                        <td style="padding:8px 0;"><strong>Name:</strong></td>
+                        <td style="padding:8px 0;">${name}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:8px 0;"><strong>Email:</strong></td>
+                        <td style="padding:8px 0;">${email}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:8px 0;"><strong>Phone:</strong></td>
+                        <td style="padding:8px 0;">${phone || "N/A"}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:8px 0;"><strong>Business Type:</strong></td>
+                        <td style="padding:8px 0;">${businessType || "N/A"}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- MESSAGE BOX -->
+                <tr>
+                  <td style="padding:0 30px 30px 30px;">
+                    <div style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:12px;padding:20px;">
+                      <p style="margin:0 0 10px 0;font-size:15px;color:#374151;"><strong>Message:</strong></p>
+                      <p style="margin:0;font-size:15px;color:#111827;line-height:1.6;">
+                        ${cleanMessage}
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+                <!-- CTA BUTTON -->
+                <tr>
+                  <td align="center" style="padding:10px 30px 30px 30px;">
+                    <a href="mailto:${email}" 
+                      style="display:inline-block;background:#2563eb;color:#ffffff;padding:14px 28px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;">
+                      Reply to Client
+                    </a>
+                  </td>
+                </tr>
+                <!-- FOOTER -->
+                <tr>
+                  <td align="center" style="background:#f9fafb;padding:20px;font-size:12px;color:#6b7280;">
+                    © ${new Date().getFullYear()} Branding With SD <br/>
+                    This email was sent from your website contact form.
+                  </td>
+                </tr>
 
-            <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #ddd;">
-              
-              <!-- Header -->
-              <tr>
-                <td align="center" style="background:#111827;padding:20px;">
-                  <img src="https://brandingwithsd.vercel.app/logo.png" width="150" alt="Branding With SD" />
-                </td>
-              </tr>
+              </table>
 
-              <!-- Title -->
-              <tr>
-                <td style="padding:20px;">
-                  <h2 style="margin:0;color:#111;">New Contact Message</h2>
-                  <p style="color:#555;font-size:14px;">You received a new message from your website.</p>
-                </td>
-              </tr>
-
-              <!-- Info -->
-              <tr>
-                <td style="padding:0 20px;">
-                  <table width="100%" cellpadding="5" cellspacing="0" style="font-size:14px;">
-                    <tr>
-                      <td><strong>Name:</strong></td>
-                      <td>${name}</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Email:</strong></td>
-                      <td>${email}</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Phone:</strong></td>
-                      <td>${phone || "N/A"}</td>
-                    </tr>
-                    <tr>
-                      <td><strong>businessType:</strong></td>
-                      <td>${businessType || "N/A"}</td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-
-              <!-- Message -->
-              <tr>
-                <td style="padding:20px;">
-                  <p><strong>Message:</strong></p>
-                  <div style="border:1px solid #ddd;padding:10px;background:#fafafa;">
-                    ${cleanMessage}
-                  </div>
-                </td>
-              </tr>
-
-              <!-- Button -->
-              <tr>
-                <td align="center" style="padding:20px;">
-                  <a href="mailto:${email}" 
-                    style="background:#2563eb;color:#ffffff;padding:10px 20px;text-decoration:none;">
-                    Reply to Client
-                  </a>
-                </td>
-              </tr>
-
-              <!-- Footer -->
-              <tr>
-                <td align="center" style="background:#f1f1f1;padding:15px;font-size:12px;color:#777;">
-                  © ${new Date().getFullYear()} Branding With SD
-                </td>
-              </tr>
-
-            </table>
-
-          </td>
-        </tr>
-      </table>
-      `,
+            </td>
+          </tr>
+        </table>
+        `,
     })
 
     return NextResponse.json({ success: true, data })
