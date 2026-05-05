@@ -106,17 +106,18 @@ export default function PortfolioPage() {
                 { label: "Shopify", value: "shopify" },
                 { label: "React/Next", value: "react" },
               ].map((tab) => (
-                <button
-                  key={tab.value}
-                  onClick={() => setActiveTab(tab.value)}
-                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all
-          ${activeTab === tab.value
-                      ? "bg-blue-600 text-white"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
-                    }`}
-                >
-                  {tab.label}
-                </button>
+                 <button
+              key={tab.value}
+              onClick={() => setActiveTab(tab.value)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all
+              ${
+                activeTab === tab.value
+                  ? "bg-blue-600 text-white"
+                  : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
+              }`}
+            >
+              {tab.label}
+            </button>
               ))}
             </div>
 
@@ -137,13 +138,15 @@ export default function PortfolioPage() {
                 >
 
                   {/* IMAGE */}
-                  <div className="relative w-full h-64">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
+                   <div className="relative w-full h-64">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+                  className="object-contain"
+                />
+              </div>
 
                   {/* CONTENT */}
                   <div className="p-6">
