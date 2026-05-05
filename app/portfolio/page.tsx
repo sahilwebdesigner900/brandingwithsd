@@ -106,18 +106,17 @@ export default function PortfolioPage() {
                 { label: "Shopify", value: "shopify" },
                 { label: "React/Next", value: "react" },
               ].map((tab) => (
-                 <button
-              key={tab.value}
-              onClick={() => setActiveTab(tab.value)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all
-              ${
-                activeTab === tab.value
-                  ? "bg-blue-600 text-white"
-                  : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
-              }`}
-            >
-              {tab.label}
-            </button>
+                <button
+                  key={tab.value}
+                  onClick={() => setActiveTab(tab.value)}
+                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all
+              ${activeTab === tab.value
+                      ? "bg-blue-600 text-white"
+                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
+                    }`}
+                >
+                  {tab.label}
+                </button>
               ))}
             </div>
 
@@ -137,15 +136,15 @@ export default function PortfolioPage() {
           shadow-sm"
                 >
                   {/* IMAGE */}
-                   <div className="relative w-full h-64">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
-                  className="object-contain"
-                />
-              </div>
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+                      className="object-contain"
+                    />
+                  </div>
                   {/* CONTENT */}
                   <div className="p-6">
                     <h3 className="text-lg font-bold mb-2">
@@ -155,14 +154,14 @@ export default function PortfolioPage() {
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                       {project.desc}
                     </p>
-
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 text-sm font-semibold"
+                      className="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold"
                     >
-                      View Project <ArrowRight size={14} />
+                      View Project
+                      <ArrowRight size={14} />
                     </a>
                   </div>
                 </motion.div>
