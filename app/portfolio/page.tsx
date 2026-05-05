@@ -37,9 +37,9 @@ const projects = [
     category: "react",
   },
 ]
-const [activeTab, setActiveTab] = useState("all")
-const filteredProjects = activeTab === "all" ? projects : projects.filter((p) => p.category === activeTab)
-export default function PortfolioPage() {
+export default function PortfolioPage() {\
+  const [activeTab, setActiveTab] = useState("all")
+  const filteredProjects = activeTab === "all" ? projects : projects.filter((p) => p.category === activeTab)
   return (
     <>
       <Navigation />
@@ -136,7 +136,6 @@ export default function PortfolioPage() {
           border border-slate-200 dark:border-slate-800 
           shadow-sm"
                 >
-
                   {/* IMAGE */}
                    <div className="relative w-full h-64">
                 <Image
@@ -147,7 +146,6 @@ export default function PortfolioPage() {
                   className="object-contain"
                 />
               </div>
-
                   {/* CONTENT */}
                   <div className="p-6">
                     <h3 className="text-lg font-bold mb-2">
@@ -167,7 +165,6 @@ export default function PortfolioPage() {
                       View Project →
                     </a>
                   </div>
-
                 </motion.div>
               ))}
 
