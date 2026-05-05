@@ -12,7 +12,7 @@ const testimonials = [
     company: "Outreach Auto Works",
     image: "/main-testimonials/vishaldutt.webp",
     text: "Working with Sahil and his team was a great experience. They built a clean, professional website for our auto repair business and improved our local visibility. We started getting more inquiries within weeks.",
-    rating: 4.5,
+    rating: 5,
   },
   {
     name: "Lalit Sharma",
@@ -34,7 +34,7 @@ const testimonials = [
     name: "Sukhpreet Singh",
     role: "— CEO, Web Design Discovery (Mohali)",
     company: "Web Design Discovery",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
+    image: "/main-testimonials/sukhpreet.webp",
     text: "Their development skills and attention to detail are impressive. The website performance, design, and SEO structure were exactly what we needed for scaling our services.",
     rating: 4.5,
   },

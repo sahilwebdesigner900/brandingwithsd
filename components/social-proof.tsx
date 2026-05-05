@@ -7,76 +7,31 @@ import useEmblaCarousel from "embla-carousel-react"
 
 const testimonials = [
   {
-    text: "Transformed our business with an exceptional digital marketing strategy. Our leads increased by 300% in the first quarter.",
-    author: "Rajesh Kumar",
-    role: "Founder",
-    company: "Tech Startup India",
-    image: "https://i.pravatar.cc/150?u=1",
+    text: "Working with Sahil and his team was a great experience. They built a clean, professional website for our auto repair business and improved our local visibility. We started getting more inquiries within weeks.",
+    author: "Vishal Dutt",
+    role: "— Founder, Outreach Auto Works (Australia)",
+    company: "Outreach Auto Works",
+    image: "/main-testimonials/vishaldutt.webp",
     rating: 5,
-    tag: "SEO & Growth"
+    tag: "Web Design / SEO & GMB"
   },
   {
-    text: "Best web design agency we have ever worked with. Highly professional! The UI/UX is absolutely world-class.",
-    author: "Priya Sharma",
-    role: "Marketing Head",
-    company: "E-Commerce Empire",
-    image: "https://i.pravatar.cc/150?u=2",
-    rating: 5,
-    tag: "Web Design"
+    text:  "Highly professional and reliable team. They delivered our project on time with modern design and smooth functionality. I would definitely recommend them for web development",
+    author: "Sumitpal Singh",
+    role: "— Founder, WebSingh (Mohali)",
+    company: "WebSingh (Mohali)",
+    image: "/team/sumitpal.webp",
+    rating: 4.8,
+    tag: "Website Design"
   },
   {
-    text: "Outstanding SEO results and excellent customer support throughout. They are now our permanent digital partners.",
-    author: "Amit Patel",
-    role: "Director",
-    company: "Business Solutions Co",
-    image: "https://i.pravatar.cc/150?u=3",
-    rating: 5,
-    tag: "Digital Strategy"
-  },
-  {
-    text: "They delivered exactly what was promised and exceeded expectations. The ROI on our PPC campaigns was incredible.",
-    author: "Neha Gupta",
-    role: "Manager",
-    company: "Digital Marketing Firm",
-    image: "https://i.pravatar.cc/150?u=4",
-    rating: 5,
-    tag: "PPC/Ads"
-  },
-  {
-    text: "Professional team, quick turnaround, and measurable results. My conversion rate went from 2% to 11%!",
-    author: "Vikram Singh",
-    role: "VP Finance",
-    company: "Finance Services",
-    image: "https://i.pravatar.cc/150?u=5",
-    rating: 5,
-    tag: "Conversion"
-  },
-  {
-    text: "Their strategic approach to branding helped us stand out in a crowded market. Truly creative minds.",
-    author: "Anjali Verma",
-    role: "CEO",
-    company: "Retail Brand",
-    image: "https://i.pravatar.cc/150?u=6",
-    rating: 5,
-    tag: "Branding"
-  },
-  {
-    text: "Best web design agency we have ever worked with. Highly professional! The UI/UX is absolutely world-class.",
-    author: "Priya Sharma",
-    role: "Marketing Head",
-    company: "E-Commerce Empire",
-    image: "https://i.pravatar.cc/150?u=2",
-    rating: 5,
-    tag: "Web Design"
-  },
-  {
-    text: "Outstanding SEO results and excellent customer support throughout. They are now our permanent digital partners.",
-    author: "Amit Patel",
-    role: "Director",
-    company: "Business Solutions Co",
-    image: "https://i.pravatar.cc/150?u=3",
-    rating: 5,
-    tag: "Digital Strategy"
+    text: "Their development skills and attention to detail are impressive. The website performance, design, and SEO structure were exactly what we needed for scaling our services.",
+    author: "Sukhpreet Singh",
+    role: "— CEO, Web Design Discovery (Mohali)",
+    company: "Web Design Discovery",
+    image: "/main-testimonials/sukhpreet.webp",
+    rating: 4.5,
+    tag: "Web Development"
   },
   {
     text: "They delivered exactly what was promised and exceeded expectations. The ROI on our PPC campaigns was incredible.",
@@ -88,24 +43,23 @@ const testimonials = [
     tag: "PPC/Ads"
   },
   {
-    text: "Professional team, quick turnaround, and measurable results. My conversion rate went from 2% to 11%!",
+    text: "Professional team, quick turnaround, and measurable results.",
     author: "Vikram Singh",
-    role: "VP Finance",
-    company: "Finance Services",
-    image: "https://i.pravatar.cc/150?u=5",
+    role: "Contract Manager (UK)",
+    company: "contract management solutions",
+    image: "https://sahilwebdesigner900.github.io/portfolio/assets/img/testimonials/vikaram.png",
     rating: 5,
-    tag: "Conversion"
+    tag: "Development"
   },
   {
-    text: "Their strategic approach to branding helped us stand out in a crowded market. Truly creative minds.",
-    author: "Anjali Verma",
-    role: "CEO",
-    company: "Retail Brand",
-    image: "https://i.pravatar.cc/150?u=6",
+    text: "Our online presence improved significantly after working with them. The website looks premium and helps us generate quality leads regularly.",
+    author: "Lalit Sharma",
+    role: "— Founder of Sukoji Elevator",
+    company: "Sukoji Elevator",
+    image: "/main-testimonials/Lalit-sharma.webp",
     rating: 5,
     tag: "Branding"
   },
-  // Add 6 more here to reach 12...
 ];
 
 export default function SocialProofCarousel() {
