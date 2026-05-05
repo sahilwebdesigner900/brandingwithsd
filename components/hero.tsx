@@ -49,7 +49,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance"
             >
-              Web Design and Development and Marketing for{" "}
+              Web Design/Development and Marketing for{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
                 Your Business
               </span>
