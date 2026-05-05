@@ -42,15 +42,15 @@ const testimonials = [
     rating: 5,
     tag: "PPC/Ads"
   },
-  // {
-  //   text: "Professional team, quick turnaround, and measurable results.",
-  //   author: "Vikram Singh",
-  //   role: "Contract Manager (UK)",
-  //   company: "contract management solutions",
-  //   image: "https://sahilwebdesigner900.github.io/portfolio/assets/img/testimonials/vikaram.png",
-  //   rating: 5,
-  //   tag: "Development"
-  // },
+  {
+    text: "Professional team, quick turnaround, and measurable results.",
+    author: "Vikram Singh",
+    role: "Contract Manager (UK)",
+    company: "contract management solutions",
+    image: "https://sahilwebdesigner900.github.io/portfolio/assets/img/testimonials/vikaram.png",
+    rating: 5,
+    tag: "Development"
+  },
   {
     text: "Our online presence improved significantly after working with them. The website looks premium and helps us generate quality leads regularly.",
     author: "Lalit Sharma",
