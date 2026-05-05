@@ -105,7 +105,7 @@ export async function POST(req: Request) {
                 <!-- FOOTER -->
                 <tr>
                   <td align="center" style="background:#f9fafb;padding:20px;font-size:12px;color:#6b7280;">
-                    © ${new Date().getFullYear()} Branding With SD <br/>
+                    © ${new Date().getFullYear()} Brandingwith SD <br/>
                     This email was sent from your website contact form.
                   </td>
                 </tr>

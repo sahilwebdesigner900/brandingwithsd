@@ -25,7 +25,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background py-20 md:py-32">
+    <section className="relative overflow-hidden bg-background py-12 md:py-20">
       <div className="absolute inset-0 z-0 opacity-30 dark:opacity-20">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />

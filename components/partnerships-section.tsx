@@ -5,7 +5,7 @@ import { CheckCircle2, TrendingUp, Sparkles, ShieldCheck, Globe, Zap } from "luc
 
 export default function PartnershipsSection() {
   const companies = [
-    { name: "NikksTech", logo: "https://nikktechnologies.com/wp-content/uploads/2026/01/Untitled-design-13.webp" },
+    { name: "Outreach Auto Works", logo: "https://outreachautoworks.com/wp-content/uploads/2023/11/oaw-logo-Photoroom-1.png" },
     { name: "Web Design Discovery", logo: "https://www.webdesigndiscovery.com/asset/images/webdesignd.png" },
     { name: "Gray Tiger Security", logo: "https://graytigersecurity.com/wp-content/uploads/2024/08/WhatsApp_Image_2024-08-07_at_1.24.24_PM-removebg-preview-removebg-preview-129x129.png" },
     { name: "Sukoji Elevators", logo: "https://sukoji.com/wp-content/uploads/al_opt_content/IMAGE/sukoji.com/wp-content/uploads/2025/12/sukoji-logo.jpg.bv.webp?bv_host=sukoji.com" },
@@ -44,7 +44,7 @@ export default function PartnershipsSection() {
         </div>
 
         {/* --- LOGO SHOWCASE --- */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20 md:mb-32">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {companies.map((company, i) => (
             <motion.div
               key={i}
