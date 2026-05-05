@@ -13,26 +13,32 @@ const projects = [
     desc: "Expert Car Repair & Auto Maintenance in Adelaide",
     image: "/portfolio/outreachautoworks.png",
     link: "https://outreachautoworks.com/",
+    category: "wordpress",
   },
   {
     title: "Heros Fashion",
-    desc: "At Hero’s, we don’t just print patterns — we tell stories, one block at a time.",
+    desc: "Modern fashion brand website",
     image: "/portfolio/herosfashion-portfolio.jpg",
     link: "https://herosfashion.com/",
+    category: "shopify",
   },
   {
     title: "Sukoji Elevator",
-    desc: "Sukoji Elevator offers complete lift solutions—installation, maintenance, and repairs",
+    desc: "Corporate service website",
     image: "/portfolio/sukoji.png",
     link: "https://sukoji.com/",
+    category: "html",
   },
   {
     title: "Glossnroll",
-    desc: "House Painters & Decorator in Adelaide | Wall Painter",
+    desc: "Local service business website",
     image: "/portfolio/glossnroll.png",
     link: "https://glossnroll.com.au/",
+    category: "react",
   },
 ]
+const [activeTab, setActiveTab] = useState("all")
+const filteredProjects = activeTab === "all" ? projects : projects.filter((p) => p.category === activeTab)
 export default function PortfolioPage() {
   return (
     <>
@@ -82,25 +88,47 @@ export default function PortfolioPage() {
           <div className="max-w-7xl mx-auto">
 
             {/* 🔥 HEADER */}
-            <div className="mb-16 text-center">
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
+            <div className="mb-12 text-center">
+              <h2 className="text-4xl md:text-5xl font-black mb-4">
                 Selected Work
               </h2>
-              <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-base leading-relaxed">
-                A collection of websites designed with performance, aesthetics, and user experience in mind.
+              <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+                A collection of websites designed with performance and modern UI.
               </p>
+            </div>
+
+            {/* 🔥 TABS */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {[
+                { label: "All", value: "all" },
+                { label: "WordPress", value: "wordpress" },
+                { label: "HTML", value: "html" },
+                { label: "Shopify", value: "shopify" },
+                { label: "React/Next", value: "react" },
+              ].map((tab) => (
+                <button
+                  key={tab.value}
+                  onClick={() => setActiveTab(tab.value)}
+                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all
+          ${activeTab === tab.value
+                      ? "bg-blue-600 text-white"
+                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
+                    }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
 
             {/* 💎 GRID */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-              {projects.map((project, i) => (
+              {filteredProjects.map((project, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
 
                   className="rounded-[2rem] overflow-hidden 
           bg-white dark:bg-slate-900 
@@ -108,45 +136,40 @@ export default function PortfolioPage() {
           shadow-sm"
                 >
 
-                  {/* 🖼️ IMAGE */}
-                  <div className="relative w-full h-72">
-                    <Image
+                  {/* IMAGE */}
+                  <div className="relative w-full h-64">
+                    <img
                       src={project.image}
                       alt={project.title}
-                      fill
-                      sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
-                      className="object-contain"
+                      className="w-full h-full object-contain"
                     />
                   </div>
 
-                  {/* 📄 CONTENT */}
+                  {/* CONTENT */}
                   <div className="p-6">
-
                     <h3 className="text-lg font-bold mb-2">
                       {project.title}
                     </h3>
 
-                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                       {project.desc}
                     </p>
 
-                    {/* 🔗 BUTTON */}
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm"
+                      className="text-blue-600 text-sm font-semibold"
                     >
-                      {project.link} 
-                      <ArrowRight size={16} />
+                      View Project →
                     </a>
-
                   </div>
 
                 </motion.div>
               ))}
 
             </div>
+
           </div>
         </section>
 
