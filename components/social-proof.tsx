@@ -42,15 +42,15 @@ const testimonials = [
     rating: 5,
     tag: "PPC/Ads"
   },
-  {
-    text: "Professional team, quick turnaround, and measurable results.",
-    author: "Vikram Singh",
-    role: "Contract Manager (UK)",
-    company: "contract management solutions",
-    image: "https://sahilwebdesigner900.github.io/portfolio/assets/img/testimonials/vikaram.png",
-    rating: 5,
-    tag: "Development"
-  },
+  // {
+  //   text: "Professional team, quick turnaround, and measurable results.",
+  //   author: "Vikram Singh",
+  //   role: "Contract Manager (UK)",
+  //   company: "contract management solutions",
+  //   image: "https://sahilwebdesigner900.github.io/portfolio/assets/img/testimonials/vikaram.png",
+  //   rating: 5,
+  //   tag: "Development"
+  // },
   {
     text: "Our online presence improved significantly after working with them. The website looks premium and helps us generate quality leads regularly.",
     author: "Lalit Sharma",
@@ -110,7 +110,7 @@ export default function SocialProofCarousel() {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex -ml-6">
             {testimonials.map((item, idx) => (
-              <div key={idx} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-6">
+              <div key={item.author + idx} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-6">
                 <motion.div 
                   whileHover={{ y: -10 }}
                   className="h-full p-8 md:p-10 rounded-[3rem] bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800 backdrop-blur-sm flex flex-col justify-between group transition-all duration-500"
@@ -118,7 +118,7 @@ export default function SocialProofCarousel() {
                   <div>
                     <div className="flex justify-between items-start mb-8">
                       <div className="flex gap-0.5">
-                        {[...Array(item.rating)].map((_, i) => (
+                        {[...Array(Math.floor(item.rating))].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                         ))}
                       </div>
@@ -143,7 +143,7 @@ export default function SocialProofCarousel() {
                     </div>
                     <div>
                       <h4 className="font-black text-slate-900 dark:text-white text-base leading-none mb-1">{item.author}</h4>
-                      <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-tighter">{item.tag}</p>
+                      <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-tighter">{item.role}</p>
                     </div>
                   </div>
                 </motion.div>
