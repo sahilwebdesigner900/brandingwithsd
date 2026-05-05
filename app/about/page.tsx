@@ -19,7 +19,7 @@ const teamMembers = [
   { name: "Amritpal Singh", role: "SEO Specialist", image: "/team/seoexpert.webp" },
   { name: "Sumitpal Singh", role: "Senior Designer", image: "/team/sumitpal.webp" },
   { name: "Fateh", role: "Digital Marketing Strategist", image: "https://i.pravatar.cc/400?u=4" },
-  { name: "", role: "Full Stack Developer", image: "https://i.pravatar.cc/400?u=5" },
+  { name: "Fateh", role: "Full Stack Developer", image: "https://i.pravatar.cc/400?u=5" },
   { name: "Gagan", role: "Web Hosting Manager", image: "https://i.pravatar.cc/400?u=5" },
 ]
 const testimonials = [
