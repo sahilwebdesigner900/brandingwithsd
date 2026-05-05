@@ -24,8 +24,8 @@ export default function Footer() {
       title: "Company",
       links: [
         { label: "About Us", href: "/about" },
-        { label: "Case Studies", href: "/case-studies" },
-        { label: "Blog", href: "#" },
+        { label: "Our Portfolio", href: "/portfolio" },
+        { label: "Price", href: "/pricing" },
         { label: "Contact", href: "/contact" },
       ],
     },
@@ -33,18 +33,18 @@ export default function Footer() {
       title: "Support",
       links: [
         { label: "FAQ", href: "/faq" },
-        { label: "Documentation", href: "#" },
-        { label: "Help Center", href: "#" },
-        { label: "Community", href: "#" },
+        { label: "Whatsapp", href: "https://wa.me/917625903382" },
+        { label: "Help Center", href: "https://wa.me/917625903382" },
+        { label: "Contact", href: "/contact" },
       ],
     },
   ]
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/sahil-dutt-80b50121b/", label: "LinkedIn" },
+    // { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100073794800904", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/sahil__pb.06/", label: "Instagram" },
   ]
 
   return (
