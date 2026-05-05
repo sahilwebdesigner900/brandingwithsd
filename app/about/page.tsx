@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Navigation from "@/components/navigation"
 import SocialProof from "@/components/social-proof"
 import WhatsAppButton from "@/components/whatsapp-button"
@@ -49,84 +49,10 @@ const testimonials = [
   }
 ]
 
-// --- Team Carousel Component (Hover Stop + Right-Click Drag) ---
-
-// function TeamCarousel() {
-//   const [isPaused, setIsPaused] = useState(false);
-//   const x = useMotionValue(0);
-//   // springX makes the manual dragging feel smooth and premium
-//   const springX = useSpring(x, { stiffness: 300, damping: 30 });
-
-//   const handlePointerDown = (e: React.PointerEvent) => {
-//     if (e.button !== 2) return; // Only trigger on Right Click
-
-//     const startX = e.pageX - x.get();
-
-//     const handlePointerMove = (moveEvent: PointerEvent) => {
-//       x.set(moveEvent.pageX - startX);
-//     };
-
-//     const handlePointerUp = () => {
-//       window.removeEventListener("pointermove", handlePointerMove);
-//       window.removeEventListener("pointerup", handlePointerUp);
-//     };
-
-//     window.addEventListener("pointermove", handlePointerMove);
-//     window.addEventListener("pointerup", handlePointerUp);
-//   };
-
-//   return (
-//     <section
-//       onContextMenu={(e) => e.preventDefault()} // Disables right-click menu
-//       className="py-20 bg-secondary/30 border-y border-border overflow-hidden"
-//     >
-//       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-//         <h2 className="text-4xl font-black tracking-tighter uppercase italic">Meet the Visionaries</h2>
-//         <p className="text-[10px] uppercase tracking-widest opacity-40 mt-2 italic">Right-click & drag to move manually</p>
-//       </div>
-
-//       <div
-//         className="flex gap-8 group cursor-grab active:cursor-grabbing"
-//         onPointerEnter={() => setIsPaused(true)}  // Stops animation on mouse hover
-//         onPointerLeave={() => setIsPaused(false)} // Resumes animation on mouse leave
-//         onPointerDown={handlePointerDown}
-//       >
-//         <motion.div
-//           className="flex gap-8 whitespace-nowrap"
-//           style={{ x: springX }}
-//           animate={isPaused ? {} : { x: [0, -1800] }} // Toggle between moving and still
-//           transition={{
-//             duration: 40,
-//             repeat: Infinity,
-//             ease: "linear"
-//           }}
-//         >
-//           {teamMembers.map((member, i) => (
-//             <div key={i} className="w-[300px] flex-shrink-0 bg-card rounded-[2.5rem] p-4 border border-border shadow-xl hover:border-primary/50 transition-all group/card">
-//               <div className="overflow-hidden rounded-[2rem] mb-6 aspect-square">
-//                 <img
-//                   src={member.image}
-//                   className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-110"
-//                   alt={member.name}
-//                 />
-//               </div>
-//               <div className="text-center pb-4">
-//                 <h4 className="text-xl font-bold tracking-tight">{member.name}</h4>
-//                 <p className="text-primary text-sm font-semibold uppercase tracking-widest mt-1">{member.role}</p>
-//               </div>
-//             </div>
-//           ))}
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// --- Main Page Component ---
 
 export default function AboutPage() {
   const [testiIndex, setTestiIndex] = useState(0)
-
+  const [isPaused, setIsPaused] = useState(false)
   const nextTesti = () => setTestiIndex((prev) => (prev + 1) % testimonials.length)
   const prevTesti = () => setTestiIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
 
@@ -136,41 +62,7 @@ export default function AboutPage() {
 
       <main className="min-h-screen space-y-32 pb-24">
 
-        {/* HERO SECTION */}
-        <section className="pt-32 px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }}
-                className="space-y-8"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                  </span>
-                  Established 2002
-                </div>
-                <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter text-balance">
-                  WE DESIGN <br /> <span className="text-muted-foreground/30">DIGITAL</span> <br /> IMPACT.
-                </h1>
-                <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                  More than an agency, we are your technical partners in scaling the next generation of global brands.
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
-                className="relative aspect-square bg-gradient-to-tr from-primary to-accent rounded-[4rem] rotate-3 overflow-hidden hidden lg:block"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
-                  className="w-full h-full object-cover mix-blend-overlay opacity-80 -rotate-3 scale-110"
-                  alt="Team collaboration"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
+       
         {/* HERO SECTION */}
         <section className="relative pt-32 pb-0 px-6 overflow-hidden min-h-[90vh] flex items-center mb-0">
           {/* Background Image Layer */}
@@ -246,7 +138,7 @@ export default function AboutPage() {
               className="flex gap-8 w-max cursor-grab active:cursor-grabbing"
 
               drag="x"
-              dragConstraints={{ left: -1600, right: 0 }}
+              dragConstraints={{ left: -2000, right: 0 }}
               dragElastic={0.05}
 
               animate={isPaused ? {} : { x: ["0%", "-50%"] }}
@@ -259,7 +151,7 @@ export default function AboutPage() {
             >
               {[...teamMembers, ...teamMembers].map((member, i) => (
                 <div
-                  key={i}
+                  key={member.name + i}
                   className="w-[300px] flex-shrink-0 bg-white dark:bg-slate-900 rounded-[2rem] p-5 border border-slate-200 dark:border-slate-800 shadow-sm"
                 >
 
