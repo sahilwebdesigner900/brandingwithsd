@@ -25,24 +25,24 @@ const teamMembers = [
 const testimonials = [
   {
     id: 1,
-    content: "The level of technical depth this team brings is unmatched. They didn't just build a site; they engineered a growth engine for our SaaS platform.",
-    author: "James Hardon",
-    role: "Director of Engineering, TechFlow",
-    image: "https://i.pravatar.cc/150?u=12"
+    content: "Working with Sahil and his team was a great experience. They built a clean, professional website for our auto repair business and improved our local visibility. We started getting more inquiries within weeks.",
+    author: "Vishal Dutt",
+    role: "— Founder, Outreach Auto Works (Australia)",
+    image: "/main-testimonials/vishaldutt.webp"
   },
   {
     id: 2,
-    content: "Our organic traffic increased by 400% in six months. Their SEO strategy is data-driven, transparent, and—most importantly—it actually works.",
-    author: "Sarah Jenkins",
-    role: "Marketing Head, GreenGlobal",
-    image: "https://i.pravatar.cc/150?u=13"
+    content: "Our online presence improved significantly after working with them. The website looks premium and helps us generate quality leads regularly.",
+    author: "Lalit Sharma",
+    role: "— Founder of Sukoji Elevator",
+    image: "/main-testimonials/Lalit-sharma.webp"
   },
   {
     id: 3,
-    content: "Design-wise, they are in a league of their own. They captured our brand's essence and translated it into a world-class digital experience.",
-    author: "Michael Voss",
-    role: "Founder, ArchiStudio",
-    image: "https://i.pravatar.cc/150?u=14"
+    content: "They understand business needs and deliver results. From website design to SEO, everything was handled professionally. We’ve seen strong growth in our online reach.",
+    author: "Kuldeep Singh",
+    role: "— Manager, Gray Tiger Security (Dubai)",
+    image: "/main-testimonials/Kuldeep.webp"
   }
 ]
 

@@ -7,7 +7,7 @@ import useEmblaCarousel from "embla-carousel-react"
 
 const testimonials = [
   {
-    name: "Vishal",
+    name: "Vishal Dutt",
     role: "— Founder, Outreach Auto Works (Australia)",
     company: "Outreach Auto Works",
     image: "/main-testimonials/vishaldutt.webp",
@@ -16,11 +16,19 @@ const testimonials = [
   },
   {
     name: "Lalit Sharma",
-    role: "Founder of Sukoji Elevator",
+    role: "— Founder of Sukoji Elevator",
     company: "Sukoji Elevator",
     image: "/main-testimonials/Lalit-sharma.webp",
     text: "Our online presence improved significantly after working with them. The website looks premium and helps us generate quality leads regularly.",
     rating: 5,
+  },
+   {
+    name: "Kuldeep Singh",
+    role: "— Manager, Gray Tiger Security (Dubai)",
+    company: "Gray Tiger Security (Dubai)",
+    image: "/main-testimonials/Kuldeep.webp",
+    text: "They understand business needs and deliver results. From website design to SEO, everything was handled professionally. We’ve seen strong growth in our online reach.",
+    rating: 4.5,
   },
   {
     name: "Sukhpreet Singh",
@@ -37,14 +45,6 @@ const testimonials = [
     image: "/team/sumitpal.webp",
     text: "Highly professional and reliable team. They delivered our project on time with modern design and smooth functionality. I would definitely recommend them for web development",
     rating: 4.8,
-  },
-  {
-    name: "Kuldeep Singh",
-    role: "— Manager, Gray Tiger Security (Dubai)",
-    company: "Gray Tiger Security (Dubai)",
-    image: "/main-testimonials/kuldeep.webp",
-    text: "They understand business needs and deliver results. From website design to SEO, everything was handled professionally. We’ve seen strong growth in our online reach.",
-    rating: 4.5,
   },
 ];
 
