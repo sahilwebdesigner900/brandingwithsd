@@ -60,10 +60,10 @@ function ServiceHero() {
 
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="relative hidden lg:block">
           <div className="absolute -inset-10 bg-blue-500/20 blur-[100px] rounded-full" />
-          <div className="relative z-10 p-8 rounded-[3rem] bg-white/10 dark:bg-white/5 backdrop-blur-3xl border border-white/20 shadow-2xl">
+          <div className="relative z-10 p-4 rounded-[3 rem] bg-white/10 dark:bg-white/5 backdrop-blur-3xl border border-white/20 shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000&auto=format&fit=crop"
-              className="rounded-2xl shadow-lg"
+              className="rounded-[2 rem] shadow-lg"
               alt="CMS Management Interface"
             />
           </div>
