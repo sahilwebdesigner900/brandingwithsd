@@ -106,36 +106,18 @@ export default function FullPricingPage() {
 ]
 
  const faqs = [
-  {
-    question: "What do I need to get started?",
-    answer:
-      "To get started, we only need your business details, logo (if available), and any reference websites you like. If you don’t have content or images, our team will create everything for you."
-  },
-  {
-    question: "Do you provide hosting and maintenance?",
-    answer:
-      "Yes, all our packages include 1 year of high-speed hosting and 12 months of technical maintenance. We ensure your website stays fast, secure, and fully updated."
-  },
-  {
-    question: "How long does it take to complete a website?",
-    answer:
-      "Most websites are completed within 5–14 business days, depending on the project size and requirements."
-  },
-  {
-    question: "Will my website be mobile-friendly and SEO optimized?",
-    answer:
-      "Absolutely. Every website we build is fully responsive (mobile-friendly) and optimized for SEO to help you rank better on Google."
-  },
-  {
-    question: "Can I upgrade or modify my website later?",
-    answer:
-      "Yes, your website is fully scalable. You can upgrade features, redesign pages, or add new functionality at any time."
-  },
-  {
-    question: "Do you provide SEO and digital marketing services?",
-    answer:
-      "Yes, we offer complete SEO, Local SEO (GMB optimization), and digital marketing services to help grow your business online."
-  },
+  { question: "What do I need to get started?",
+    answer: "To get started, we only need your business details, logo (if available), and any reference websites you like. If you don’t have content or images, our team will create everything for you."},
+  { question: "Do you provide hosting and maintenance?",
+    answer:"Yes, all our packages include 1 year of high-speed hosting and 12 months of technical maintenance. We ensure your website stays fast, secure, and fully updated."},
+  { question: "How long does it take to complete a website?",
+    answer: "Most websites are completed within 5–14 business days, depending on the project size and requirements." },
+  { question: "Will my website be mobile-friendly and SEO optimized?",
+    answer: "Absolutely. Every website we build is fully responsive (mobile-friendly) and optimized for SEO to help you rank better on Google."},
+  { question: "Can I upgrade or modify my website later?",
+    answer: "Yes, your website is fully scalable. You can upgrade features, redesign pages, or add new functionality at any time."},
+  { question: "Do you provide SEO and digital marketing services?",
+    answer: "Yes, we offer complete SEO, Local SEO (GMB optimization), and digital marketing services to help grow your business online." },
 ]
 
   const filteredServices = standaloneServices.filter(s =>
