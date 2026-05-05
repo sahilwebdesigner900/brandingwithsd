@@ -14,17 +14,13 @@ import { Button } from "@/components/ui/button"
 // --- Data ---
 
 const teamMembers = [
-  { name: "Alex Rivera", role: "CEO & Founder", image: "https://i.pravatar.cc/400?u=1" },
-  { name: "Sarah Chen", role: "Head of SEO", image: "https://i.pravatar.cc/400?u=2" },
-  { name: "Marcus Thorne", role: "Design Director", image: "https://i.pravatar.cc/400?u=3" },
-  { name: "Elena Rodriguez", role: "Strategy Lead", image: "https://i.pravatar.cc/400?u=4" },
+  { name: "Sahil Dutt", role: "Founder", image: "/team/webdesigner.webp" },
+  { name: "Vishal Dutt", role: "CEO", image: "/team/webdesigner.webp" },
+  { name: "Amritpal Singh", role: "Head of SEO", image: "/team/seoexpert.webp" },
+  { name: "Sumitpal Singh", role: "Senier Designer", image: "/team/sumitpal.webp" },
+  { name: "Re", role: "Strategy Lead", image: "https://i.pravatar.cc/400?u=4" },
   { name: "David Park", role: "Technical Architect", image: "https://i.pravatar.cc/400?u=5" },
-  // Duplicates for seamless looping
-  { name: "Alex Rivera", role: "CEO & Founder", image: "https://i.pravatar.cc/400?u=1" },
-  { name: "Sarah Chen", role: "Head of SEO", image: "https://i.pravatar.cc/400?u=2" },
-  { name: "Marcus Thorne", role: "Design Director", image: "https://i.pravatar.cc/400?u=3" },
 ]
-
 const testimonials = [
   {
     id: 1,
@@ -128,42 +124,28 @@ export default function AboutPage() {
           </div>
 
           {/* CAROUSEL WRAPPER */}
-          <div
-            className="overflow-hidden"
+          <div className="overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-
+            onMouseLeave={() => setIsPaused(false)}>
             <motion.div
               className="flex gap-8 w-max cursor-grab active:cursor-grabbing"
-
               drag="x"
               dragConstraints={{ left: -2000, right: 0 }}
               dragElastic={0.05}
-
               animate={isPaused ? {} : { x: ["0%", "-50%"] }}
-
               transition={{
                 duration: 25,
                 ease: "linear",
-                repeat: Infinity,
-              }}
-            >
+                repeat: Infinity, }} >
               {[...teamMembers, ...teamMembers].map((member, i) => (
-                <div
-                  key={member.name + i}
-                  className="w-[300px] flex-shrink-0 bg-white dark:bg-slate-900 rounded-[2rem] p-5 border border-slate-200 dark:border-slate-800 shadow-sm"
-                >
-
+                <div key={member.name + i}
+                  className="w-[300px] flex-shrink-0 bg-white dark:bg-slate-900 rounded-[2rem] p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
                   {/* IMAGE */}
                   <div className="overflow-hidden rounded-[1.5rem] mb-5 aspect-square">
-                    <img
-                      src={member.image}
+                    <img src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                      className="w-full h-full object-cover"/>
                   </div>
-
                   {/* TEXT */}
                   <div className="text-center">
                     <h4 className="text-lg font-bold">
@@ -173,11 +155,9 @@ export default function AboutPage() {
                       {member.role}
                     </p>
                   </div>
-
                 </div>
               ))}
             </motion.div>
-
           </div>
         </section>
 
