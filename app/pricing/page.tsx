@@ -64,18 +64,18 @@ export default function FullPricingPage() {
       priceAUD: "100 – 180",
       duration: "One-time",
       description: "Advanced tools for growing businesses",
-      features: ["5–8 Custom Pages", "Elementor Pro Included", "Advanced On-Page SEO", "Booking System", "Google Analytics", "Priority Support"],
+      features: ["5–8 Custom Pages", "Elementor Bulder", "Advanced On-Page SEO", "Booking System", "Google Analytics", "Priority Support"],
       popular: true,
       cta: "Grow My Business",
     },
     {
-      name: "Advanced E-com",
+      name: "Advanced Website",
       priceINR: "12,000 – 20,000",
       priceUSD: "140 – 220",
       priceAUD: "160 – 240",
       duration: "One-time",
-      description: "High-performance eCommerce stores",
-      features: ["Unlimited Products", "WooCommerce Engine", "Payment Integration", "Premium UI/UX", "Advanced Security", "14-Day Delivery"],
+      description: "High-performance Website",
+      features: ["Unlimited Products", "Premium UI/UX", "Elementor Bulder", "Advanced On-Page SEO", "Booking System", "Google Analytics", "Priority Support", "Advanced Security", "14-Day Delivery"],
       popular: false,
       cta: "Scale Now",
     },
@@ -83,33 +83,60 @@ export default function FullPricingPage() {
 
   const standaloneServices = [
   { name: "Custom Next.js Website", price: "₹ 22,000+", cat: "Modern Stack", image: "/nextjs.png" },
-  { name: "Custom HTML Website", price: "₹ 15,000+", cat: "Modern Stack", image: "/html.png" },
+  { name: "Custom HTML Website", price: "₹ 20,000+", cat: "Modern Stack", image: "/html.png" },
   // { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "/tailwind.png" },
 
   { name: "Simple WordPress Setup", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
-  { name: "Advanced Elementor Pro Site", price: "₹ 8,000+", cat: "CMS", image: "/elementor.png" },
+  { name: "Advanced WordPress Elementor Site", price: "₹ 12,000+", cat: "CMS", image: "/elementor.png" },
   { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/wordpress.png" },
-  // { name: "Malware Removal & Security", price: "₹ 1,500", cat: "Maintenance", image: "/security.png" },
+  { name: "Malware Removal & Security Setup in Wordpress", price: "₹ 2,000", cat: "Maintenance", image: "/icons/menu/ssl.webp" },
+  { name: "Google Analytics/Google Console Setup in Wordpress", price: "₹ 3,000", cat: "Marketing", image: "/wordpress.png" },
 
-  { name: "WooCommerce Shopify Store Setup", price: "₹ 8,000+", cat: "E-Com", image: "/shopify.png" },
-  { name: "Shopify Custom Liquid Theme", price: "₹ 12,000+", cat: "E-Com", image: "/shopify.png" },
+  { name: "WooCommerce Shopify Store Setup", price: "₹ 10,000+", cat: "E-Com", image: "/shopify.png" },
+  { name: "Shopify Custom Liquid Theme", price: "₹ 18,000+", cat: "E-Com", image: "/shopify.png" },
   // { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
 
-  { name: "SEO one-page & Internal Links", price: "₹ 4,000", cat: "Marketing", image: "/seo.png" },
+  { name: "SEO one-page & Internal Links , Content Checking", price: "₹ 5,000", cat: "Marketing", image: "/seo.png" },
   // { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "/seo2.png" },
   { name: "Google Business Profile With LOCAL SEO", price: "₹ 5,000+", cat: "Marketing", image: "/icons/menu/gmb.png" },
-  // { name: "Google Analytics & GSC Setup", price: "₹ 2,000", cat: "Marketing", image: "/analytics.png" },
-
+  { name: "Create Social Media Posts Instagram/LinkedIn/FaceBook", price: "₹ 300+/per", cat: "Marketing", image: "/icons/menu/content.png" },
   // { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "/laravel.png" },
   // { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "/api.png" },
   // { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "/database.png" },
 ]
 
-  const faqs = [
-    { question: "What do I need to get started?", answer: "We just need your business details, logo, and any reference websites. We handle the content and images if you don't have them." },
-    { question: "Do you provide hosting and maintenance?", answer: "Yes. All plans include 1 year of high-speed hosting and 12 months of technical maintenance at zero cost." },
-    { question: "Can I upgrade my plan later?", answer: "Absolutely. You can scale from Standard to Pro or E-commerce at any time by just paying the difference." },
-  ]
+ const faqs = [
+  {
+    question: "What do I need to get started?",
+    answer:
+      "To get started, we only need your business details, logo (if available), and any reference websites you like. If you don’t have content or images, our team will create everything for you."
+  },
+  {
+    question: "Do you provide hosting and maintenance?",
+    answer:
+      "Yes, all our packages include 1 year of high-speed hosting and 12 months of technical maintenance. We ensure your website stays fast, secure, and fully updated."
+  },
+  {
+    question: "How long does it take to complete a website?",
+    answer:
+      "Most websites are completed within 5–14 business days, depending on the project size and requirements."
+  },
+  {
+    question: "Will my website be mobile-friendly and SEO optimized?",
+    answer:
+      "Absolutely. Every website we build is fully responsive (mobile-friendly) and optimized for SEO to help you rank better on Google."
+  },
+  {
+    question: "Can I upgrade or modify my website later?",
+    answer:
+      "Yes, your website is fully scalable. You can upgrade features, redesign pages, or add new functionality at any time."
+  },
+  {
+    question: "Do you provide SEO and digital marketing services?",
+    answer:
+      "Yes, we offer complete SEO, Local SEO (GMB optimization), and digital marketing services to help grow your business online."
+  },
+]
 
   const filteredServices = standaloneServices.filter(s =>
     s.name.toLowerCase().includes(searchTerm.toLowerCase())
