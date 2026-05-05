@@ -42,16 +42,14 @@ export default function Hero() {
           >
             <motion.div
               variants={itemVariants}
-              className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 border border-primary/20"
-            >
-              <span className="text-sm font-semibold">Best Digital Agency 2025-26</span>
+              className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 border border-primary/20" >
+              <span className="text-sm font-semibold">Best Designing Agency 2025-26</span>
             </motion.div>
-
             <motion.h1
               variants={itemVariants}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance"
             >
-              Web Design and Digital Marketing for{" "}
+              Web Design and Development and Marketing for{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
                 Your Business
               </span>
@@ -61,8 +59,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 text-balance leading-relaxed"
             >
-              Generate more sales and get qualified leads with AI-powered digital marketing services. 22+ years of
-              proven excellence with 1000+ successful projects.
+              Generate more sales and get qualified leads with AI-powered digital marketing services. 5+ years of
+              proven excellence with 84+ successful projects.
             </motion.p>
 
             <motion.div
@@ -79,7 +77,7 @@ export default function Hero() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto hover:bg-primary/10 bg-transparent">
-                  Get Free Audit
+                <Link href="/contact">Get Free Audit</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -88,7 +86,7 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="w-2 h-2 bg-primary rounded-full"></span>
-                500+ Happy Clients
+                84+ Happy Clients
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="w-2 h-2 bg-accent rounded-full"></span>
@@ -96,7 +94,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="w-2 h-2 bg-primary rounded-full"></span>
-                4.9★ Rating
+                4.8★ Rating
               </div>
             </motion.div>
           </motion.div>
@@ -151,11 +149,11 @@ export default function Hero() {
           transition={{ staggerChildren: 0.1 }}
         >
           {[
-            { number: "22+", label: "Years Experience" },
-            { number: "1000+", label: "Projects Done" },
-            { number: "5M+", label: "Keywords Ranked" },
-            { number: "500+", label: "Happy Clients" },
-            { number: "1M+", label: "Leads Generated" },
+            { number: "5+", label: "Years Experience" },
+            { number: "84+", label: "Projects Done" },
+            { number: "352+", label: "WebSites" },
+            { number: "84+", label: "Happy Clients" },
+            { number: "1k+", label: "Web Designing" },
           ].map((stat, i) => (
             <motion.div
               key={i}
