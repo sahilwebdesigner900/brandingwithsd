@@ -182,7 +182,7 @@ export default function Footer() {
           {/* Footer Copyright */}
           <div className="text-center pt-8 border-t border-border/30">
             <p className="text-muted-foreground text-[12px] font-medium tracking-wide">
-              &copy; {currentYear} NINETAILFOX SOLUTIONS. ALL RIGHTS RESERVED.
+              &copy; {currentYear} BrandingwithSD. ALL RIGHTS RESERVED.
             </p>
           </div>
         </div>

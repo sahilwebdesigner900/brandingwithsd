@@ -16,7 +16,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     phone: "",
-    company: "",
+    businessType: "",
     message: "",
   })
 
@@ -151,13 +151,13 @@ export default function ContactPage() {
                         placeholder="John Doe" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Company Name</label>
+                      <label className="text-sm font-medium">Business Type</label>
                       <input
-                        name="company"
-                        value={formData.company}
+                        name="businessType"
+                        value={formData.businessType}
                         onChange={handleChange}
                         className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                        placeholder="Your Business"
+                        placeholder="e.g. Barber Shop, Real Estate, Auto Repair"
                       />
                     </div>
                   </div>

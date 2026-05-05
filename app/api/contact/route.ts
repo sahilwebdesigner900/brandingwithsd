@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       )
     }
 
-    const { name, email, phone, company, message } = await req.json()
+    const { name, email, phone, businessType, message } = await req.json()
 
     // ✅ Validation
     if (!name || !email || !message) {
@@ -77,8 +77,8 @@ export async function POST(req: Request) {
                       <td>${phone || "N/A"}</td>
                     </tr>
                     <tr>
-                      <td><strong>Company:</strong></td>
-                      <td>${company || "N/A"}</td>
+                      <td><strong>businessType:</strong></td>
+                      <td>${businessType || "N/A"}</td>
                     </tr>
                   </table>
                 </td>
