@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Phone } from "lucide-react";
 import {
   // Layout, Smartphone, Briefcase, RefreshCcw, ShoppingBag, Search, Link2, MapPin, ShoppingCart, BarChart3,
    Menu, X, ChevronDown, ChevronRight,
@@ -186,10 +187,23 @@ export default function Navigation() {
             </Button>
           </div>
 
+          {/* Mobile Call Button */}
+          <div className="lg:hidden flex items-center gap-3">
+            <a href="tel:+917625903382" className="p-2 text-foreground">
+              <Phone size={28} />
+            </a>
+
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
           {/* Mobile Menu Toggle */}
-          <button className="lg:hidden p-2 text-foreground" onClick={() => setIsOpen(!isOpen)}>
+          {/* <button className="lg:hidden p-2 text-foreground" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          </button> */}
         </div>
       </div>
 
