@@ -10,6 +10,7 @@ import {
   ShieldCheck, Zap, Layers, Globe, CheckCircle2, Handshake, ArrowRight, Target, Users, Quote, ChevronLeft, ChevronRight, Star, Award
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import WebDesignTabs from "@/components/WebDesignTabs";
 
 // --- Data ---
 
@@ -345,6 +346,7 @@ export default function AboutPage() {
 
       </main>
       <SocialProof />
+      <WebDesignTabs />
       <WhatsAppButton />
       <Footer />
     </div>
