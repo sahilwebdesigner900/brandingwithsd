@@ -24,7 +24,7 @@ const tabs = [
     title: "Wireframing", 
     desc: "A website begins as a wireframe before development. It defines structure, layout, and navigation to ensure a smooth user journey.",
     icon: Grid3x3,
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop"
   },
   { 
     letter: "E", 
@@ -193,13 +193,14 @@ export default function WebDesignMeaning() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative rounded-2xl overflow-hidden h-80 md:h-full min-h-80 shadow-2xl"
+                className="relative rounded-2xl overflow-hidden shadow-2xl h-80 md:h-96"
               >
                 <Image
                   src={tabs[active].image}
                   alt={tabs[active].title}
                   fill
-                  className="object-cover"
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
