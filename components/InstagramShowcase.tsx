@@ -1,26 +1,20 @@
+"use client";
+
 import { useState } from "react";
+import Image from "next/image";
 import { Instagram } from "lucide-react";
 
 /**
- * InstagramShowcase
- * -----------------
- * Pass a list of Instagram accounts. Each card shows an avatar/image and
- * links to the profile. Because Instagram blocks public avatar scraping,
- * the most reliable way is to pass your own `image` for each account
- * (a screenshot, logo, or downloaded profile picture saved in /public or
- * imported from /src/assets). Auto-fetch is used only as a fallback.
- *
- * Usage:
- *   <InstagramShowcase
- *     accounts={[
- *       { username: "outreachautoworks", image: "/logos/outreach.jpg" },
- *       { username: "brandingwithsd",   image: "/logos/sd.jpg", label: "Branding with SD" },
- *       "https://www.instagram.com/cristiano",
- *     ]}
- *   />
+ * InstagramShowcase Component
  */
 
-type Account = | string | { username: string; label?: string; image?: string };
+type Account =
+  | string
+  | {
+      username: string;
+      label?: string;
+      image?: string;
+    };
 
 interface InstagramShowcaseProps {
   title?: string;
@@ -30,38 +24,46 @@ interface InstagramShowcaseProps {
 
 function extractUsername(input: string): string {
   const cleaned = input.trim().replace(/^@/, "");
+
   const match = cleaned.match(/instagram\.com\/([^/?#]+)/i);
+
   return (match ? match[1] : cleaned).replace(/\/+$/, "");
 }
 
 function AccountCard({ account }: { account: Account }) {
   const raw = typeof account === "string" ? account : account.username;
+
   const username = extractUsername(raw);
+
   const label =
     typeof account === "object" && account.label
       ? account.label
       : `@${username}`;
+
   const customImage =
     typeof account === "object" ? account.image : undefined;
+
   const profileUrl = `https://www.instagram.com/${username}/`;
-  // Fallback chain of remote sources if no custom image is provided
+
   const sources = [
     customImage,
     `https://unavatar.io/instagram/${username}`,
     `https://unavatar.io/${username}`,
     `https://api.dicebear.com/7.x/initials/svg?seed=${username}`,
   ].filter(Boolean) as string[];
+
   const [idx, setIdx] = useState(0);
-  const src = sources[idx];
+
   return (
     <a
       href={profileUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block rounded-2xl overflow-hidden bg-card border border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+      className="group relative block overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
     >
+      {/* Hover Border Gradient */}
       <div
-        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
             "linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
@@ -72,25 +74,36 @@ function AccountCard({ account }: { account: Account }) {
           maskComposite: "exclude",
         }}
       />
-      <div className="aspect-square relative overflow-hidden bg-muted">
-        <img
-          src={src}
-          alt={`${label} on Instagram`}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+
+      {/* Image */}
+      <div className="relative aspect-square overflow-hidden bg-muted">
+        <Image
+          src={sources[idx]}
+          alt={`${label} Instagram Profile`}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          unoptimized
           onError={() => {
-            if (idx < sources.length - 1) setIdx(idx + 1);
+            if (idx < sources.length - 1) {
+              setIdx(idx + 1);
+            }
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-100 scale-75">
-          <Instagram className="w-5 h-5 text-foreground" />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+        {/* Instagram Icon */}
+        <div className="absolute right-3 top-3 flex h-9 w-9 scale-75 items-center justify-center rounded-full bg-white/90 opacity-0 backdrop-blur transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
+          <Instagram className="h-5 w-5 text-black" />
         </div>
       </div>
+
+      {/* Content */}
       <div className="p-4">
-        <p className="font-semibold text-foreground truncate">{label}</p>
-        <p className="text-sm text-muted-foreground truncate">
+        <p className="truncate font-semibold text-foreground">{label}</p>
+
+        <p className="truncate text-sm text-muted-foreground">
           instagram.com/{username}
         </p>
       </div>
@@ -104,23 +117,28 @@ export default function InstagramShowcase({
   accounts,
 }: InstagramShowcaseProps) {
   return (
-    <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-4">
-            <Instagram className="w-4 h-4" />
+    <section className="w-full bg-background px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-muted px-4 py-1.5 text-sm font-medium text-muted-foreground">
+            <Instagram className="h-4 w-4" />
             Instagram
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             {title}
           </h2>
+
           {subtitle && (
-            <p className="mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
               {subtitle}
             </p>
           )}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {accounts.map((acc, i) => (
             <AccountCard
               key={`${typeof acc === "string" ? acc : acc.username}-${i}`}
