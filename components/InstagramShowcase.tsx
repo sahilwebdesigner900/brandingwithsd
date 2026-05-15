@@ -90,7 +90,7 @@ export default function InstagramShowcase({
                   <img
                     src={avatarUrl}
                     alt={`${label} on Instagram`}
-                    loading="lazy"
+                    loading="lazy" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src =
