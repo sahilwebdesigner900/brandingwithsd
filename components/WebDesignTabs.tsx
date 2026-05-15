@@ -197,7 +197,7 @@ export default function WebDesignMeaning() {
                 onClick={() => setActive(i)}
                 aria-label={tab.title}
                 aria-pressed={isActive}
-                className={`group relative flex h-12 w-12 items-center justify-center rounded-xl border text-base font-bold transition-all duration-300 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-lg ${
+                className={`group relative flex h-10 w-10 items-center justify-center rounded-xl border text-base font-bold transition-all duration-300 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-lg ${
                   isActive
                     ? "border-transparent bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg shadow-primary/30"
                     : "border-border bg-card/60 text-foreground backdrop-blur hover:border-primary/40 hover:bg-card"
@@ -246,7 +246,7 @@ export default function WebDesignMeaning() {
                 {/* Content side */}
                 <div className="flex flex-col justify-center p-8 md:p-12">
                   <div className="mb-6 flex items-center gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-3xl font-bold text-primary-foreground shadow-lg shadow-primary/30">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-3xl font-bold text-primary-foreground shadow-lg shadow-primary/30">
                       {tabs[active].letter}
                     </div>
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-background/50">

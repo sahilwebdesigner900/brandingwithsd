@@ -60,57 +60,6 @@ export default function AboutPage() {
 
       <main className="min-h-screen space-y-32 pb-24">
 
-       
-        {/* HERO SECTION */}
-        <section className="relative pt-32 pb-0 px-6 overflow-hidden min-h-[90vh] flex items-center mb-0">
-          {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
-              className="w-full h-full object-cover"
-              alt="Background"
-            />
-            <div className="absolute inset-0 bg-background/80 lg:bg-gradient-to-r lg:from-background lg:via-background/90 lg:to-transparent"></div>
-          </div>
-
-          <div className="max-w-7xl mx-auto relative z-10 w-full">
-            <div className="grid lg:grid-cols-2 gap-16 items-center mb-0">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="space-y-8 pb-20"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                  </span>
-                  Established 2002
-                </div>
-                <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter text-balance">
-                  WE DESIGN <br /> <span className="text-muted-foreground/30">DIGITAL</span> <br /> IMPACT.
-                </h1>
-                <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                  More than an agency, we are your technical partners in scaling the next generation of global brands.
-                </p>
-              </motion.div>
-
-              {/* Floating Card Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="relative aspect-square bg-gradient-to-tr from-primary to-accent rounded-[4rem] rotate-3 overflow-hidden hidden lg:block shadow-2xl"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
-                  className="w-full h-full object-cover mix-blend-overlay opacity-80 -rotate-3 scale-110"
-                  alt="Team collaboration"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* TEAM CAROUSEL SECTION */}
         {/* <TeamCarousel /> */}
         <section className="py-20 bg-secondary/30 border-y border-border overflow-hidden">

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
+import Awards from "@/components/Awards"
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -242,38 +243,6 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        {/* --- SECTION 4: WHY OUR SEO IS DIFFERENT --- */}
-        <section className="py-16 md:py-24 bg-blue-600 text-white overflow-hidden relative">
-          <div className="absolute top-0 right-0 p-10 md:p-20 opacity-10 pointer-events-none">
-            <Globe size={400} className="w-[200px] md:w-[400px]" />
-          </div>
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight">We Build Sustainable <br className="hidden md:block" /> Search Authority.</h2>
-              <div className="space-y-6 md:space-y-8">
-                {[
-                  { t: "GMB Dominance", d: "Hyper-local optimization that puts you in the top 3 of Google Maps instantly." },
-                  { t: "Quality Over Quantity", d: "We build high-DA backlinks that Google actually values, not spam." },
-                  { t: "ROI-Focused Reports", d: "We track leads, calls, and conversions—not just empty traffic numbers." }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="mt-1 flex-shrink-0 bg-white/20 p-1.5 rounded-full"><CheckCircle2 size={18} /></div>
-                    <div>
-                      <h4 className="font-bold text-lg md:text-xl">{item.t}</h4>
-                      <p className="text-blue-100 text-sm md:text-base opacity-90">{item.d}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 bg-white/10 backdrop-blur-lg border border-white/20 p-8 md:p-12 rounded-[32px] md:rounded-[40px] text-center">
-              <div className="text-6xl md:text-8xl font-black mb-2 italic">937%</div>
-              <div className="text-sm md:text-xl font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-4 md:mb-6">Traffic Increase</div>
-              <p className="text-blue-50 italic text-sm md:text-lg">"The biggest growth we've seen in a 6-month period." — UAE Client</p>
-            </div>
-          </div>
-        </section>
-
         {/* --- SECTION 5: FINAL CTA --- */}
         <section className="py-20 md:py-32 text-center px-6 bg-white">
           <div className="max-w-4xl mx-auto">
@@ -290,6 +259,7 @@ export default function PortfolioPage() {
             </Link>
           </div>
         </section>
+        <Awards />
       </main>
       <WhatsAppButton />
       <Footer />
