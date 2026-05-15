@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import InstagramShowcase from "@/components/InstagramShowcase";
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
@@ -259,8 +260,16 @@ export default function PortfolioPage() {
             </Link>
           </div>
         </section>
-        
+        <InstagramShowcase
+          accounts={[
+            "outreachautoworks",
+            "brandingwithsd",
+            "your_instagram_handle",
+            "another_account",
+          ]}
+        />
       </main>
+
       {/* <Awards /> */}
       <WhatsAppButton />
       <Footer />
