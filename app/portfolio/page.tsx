@@ -262,13 +262,13 @@ export default function PortfolioPage() {
         </section>
         <InstagramShowcase
           accounts={[
-            "outreachautoworks",
-            "brandingwithsd",
-            "your_instagram_handle",
-            "another_account",
-            "sahil__pb.06",
+            { username: "outreachautoworks", image: "/instagram/outreach.jpg" },
+            { username: "brandingwithsd",    image: "/logo.png },
+            { username: "cristiano",         image: "/logos/cristiano.jpg" },
+            { username: "nike",              image: "/logos/nike.jpg" },
           ]}
         />
+
       </main>
 
       {/* <Awards /> */}
