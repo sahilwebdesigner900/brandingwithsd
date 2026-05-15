@@ -269,14 +269,7 @@ export default function PortfolioPage() {
             </Link>
           </div>
         </section>
-        <InstagramShowcase
-          accounts={[
-            { username: "outreachautoworks", image: "/instagram/outreach.webp" },
-            { username: "brandingwithsd", image: "/logo.png" },
-            { username: "graytigerss", image: "/instagram/graytiger.webp" },
-            { username: "nike", image: "/logos/nike.jpg" },
-          ]}
-        />
+        
       </main>
 
       {/* <Awards /> */}
