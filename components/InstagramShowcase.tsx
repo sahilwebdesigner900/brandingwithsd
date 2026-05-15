@@ -55,12 +55,8 @@ function AccountCard({ account }: { account: Account }) {
   const [idx, setIdx] = useState(0);
 
   return (
-    <a
-      href={profileUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative block overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-    >
+    <a href={profileUrl} target="_blank" rel="noopener noreferrer"
+      className="group relative block overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
       {/* Hover Border Gradient */}
       <div
         className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"

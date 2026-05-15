@@ -244,6 +244,15 @@ export default function PortfolioPage() {
           </div>
         </section>
 
+        <InstagramShowcase
+          accounts={[
+            { username: "outreachautoworks", image: "/instagram/outreach.webp" },
+            { username: "brandingwithsd", image: "/logo.png" },
+            { username: "graytigerss", image: "/instagram/graytiger.webp" },
+            { username: "nike", image: "/logos/nike.jpg" },
+          ]}
+        />
+
         {/* --- SECTION 5: FINAL CTA --- */}
         <section className="py-20 md:py-32 text-center px-6 bg-white">
           <div className="max-w-4xl mx-auto">
@@ -262,9 +271,9 @@ export default function PortfolioPage() {
         </section>
         <InstagramShowcase
           accounts={[
-            { username: "outreachautoworks", image: "/instagram/outreach.jpg" },
+            { username: "outreachautoworks", image: "/instagram/outreach.webp" },
             { username: "brandingwithsd", image: "/logo.png" },
-            { username: "cristiano", image: "/logos/cristiano.jpg" },
+            { username: "graytigerss", image: "/instagram/graytiger.webp" },
             { username: "nike", image: "/logos/nike.jpg" },
           ]}
         />
