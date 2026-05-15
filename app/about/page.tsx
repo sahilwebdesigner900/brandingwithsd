@@ -60,6 +60,57 @@ export default function AboutPage() {
 
       <main className="min-h-screen space-y-32 pb-24">
 
+       
+        {/* HERO SECTION */}
+        <section className="relative pt-32 pb-0 px-6 overflow-hidden min-h-[90vh] flex items-center mb-0">
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+              className="w-full h-full object-cover"
+              alt="Background"
+            />
+            <div className="absolute inset-0 bg-background/80 lg:bg-gradient-to-r lg:from-background lg:via-background/90 lg:to-transparent"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10 w-full">
+            <div className="grid lg:grid-cols-2 gap-16 items-center mb-0">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="space-y-8 pb-20"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  </span>
+                  Established 2002
+                </div>
+                <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter text-balance">
+                  WE DESIGN <br /> <span className="text-muted-foreground/30">DIGITAL</span> <br /> IMPACT.
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
+                  More than an agency, we are your technical partners in scaling the next generation of global brands.
+                </p>
+              </motion.div>
+
+              {/* Floating Card Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="relative aspect-square bg-gradient-to-tr from-primary to-accent rounded-[4rem] rotate-3 overflow-hidden hidden lg:block shadow-2xl"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+                  className="w-full h-full object-cover mix-blend-overlay opacity-80 -rotate-3 scale-110"
+                  alt="Team collaboration"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* TEAM CAROUSEL SECTION */}
         {/* <TeamCarousel /> */}
         <section className="py-20 bg-secondary/30 border-y border-border overflow-hidden">
@@ -223,72 +274,6 @@ export default function AboutPage() {
                 <li className="flex items-center gap-3 text-sm font-medium border-b border-white/10 pb-2"><CheckCircle2 className="w-4 h-4" /> Former Google Experts</li>
                 <li className="flex items-center gap-3 text-sm font-medium"><CheckCircle2 className="w-4 h-4" /> Zero Outsourcing Policy</li>
               </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* IMPACT SECTION */}
-        <section className="py-18 px-0 md:px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-foreground text-background rounded-[0rem] md:rounded-[5rem] p-8 md:p-24 relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary opacity-5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2" />
-
-              <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
-                <div className="space-y-10">
-                  <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.8] uppercase text-balance">
-                    A PARTNER <br /> FOR THE <br /> <span className="text-primary italic">LONG HAUL.</span>
-                  </h2>
-                  <div className="space-y-8">
-                    <div className="flex items-start gap-6">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                        <Handshake className="text-primary w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold mb-2">Unwavering Integrity</h4>
-                        <p className="text-lg opacity-70 leading-relaxed">
-                          We don&apos;t hide behind technical jargon. Our team provides radical transparency at every stage, ensuring you know exactly where your investment is going and why it&apos;s working.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-6">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                        <Award className="text-primary w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold mb-2">Proven Results</h4>
-                        <p className="text-lg opacity-70 leading-relaxed">
-                          With over two decades of experience, we&apos;ve survived every algorithm change and market shift. Our strategies aren&apos;t based on trends—they&apos;re based on fundamental business growth.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <Button size="lg" className="rounded-full bg-primary text-white hover:bg-white hover:text-black h-20 px-12 font-black text-2xl group transition-all">
-                    LET&apos;S BUILD IMPACT <ArrowRight className="ml-3 group-hover:translate-x-3 transition-transform" />
-                  </Button>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="p-10 border border-white/10 rounded-[3rem] bg-white/5 backdrop-blur-md hover:border-primary/50 transition-colors group">
-                    <h4 className="text-6xl font-black text-primary mb-3 group-hover:scale-105 transition-transform">98%</h4>
-                    <p className="text-xs uppercase tracking-[0.3em] font-bold opacity-40">Client Retention</p>
-                  </div>
-                  <div className="p-10 border border-white/10 rounded-[3rem] bg-white/5 backdrop-blur-md hover:border-primary/50 transition-colors group">
-                    <h4 className="text-6xl font-black text-primary mb-3 group-hover:scale-105 transition-transform">22yr</h4>
-                    <p className="text-xs uppercase tracking-[0.3em] font-bold opacity-40">Market Presence</p>
-                  </div>
-                  <div className="p-10 border border-white/10 rounded-[3rem] bg-white/5 backdrop-blur-md sm:col-span-2">
-                    <div className="flex gap-2 mb-6">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
-                    </div>
-                    <p className="text-lg italic opacity-80 leading-relaxed">
-                      &quot;Working with this team changed our company&apos;s trajectory. They operate with a level of honesty and technical skill that is rare in the digital world today. Truly world-class.&quot;
-                    </p>
-                    <p className="mt-4 font-bold text-primary">— CEO, Continental Enterprises</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
