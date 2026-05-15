@@ -259,8 +259,9 @@ export default function PortfolioPage() {
             </Link>
           </div>
         </section>
-        <Awards />
+        
       </main>
+      <Awards />
       <WhatsAppButton />
       <Footer />
     </>
