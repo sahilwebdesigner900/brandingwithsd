@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
-import Awards from "@/components/Awards"
-import { Globe, CheckCircle2, ArrowRight } from "lucide-react"
+// import Awards from "@/components/Awards"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 const projects = [
@@ -261,7 +261,7 @@ export default function PortfolioPage() {
         </section>
         
       </main>
-      <Awards />
+      {/* <Awards /> */}
       <WhatsAppButton />
       <Footer />
     </>
