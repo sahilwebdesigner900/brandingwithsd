@@ -110,7 +110,7 @@ const projects = [
   },
 ]
 export default function PortfolioPage() {
-  const [activeTab, setActiveTab] = useState("all")
+  const [activeTab, setActiveTab] = useState("wordpress")
   const filteredProjects = activeTab === "all" ? projects : projects.filter((p) => p.category === activeTab)
   return (
     <>
