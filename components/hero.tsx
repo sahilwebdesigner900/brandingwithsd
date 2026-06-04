@@ -38,12 +38,11 @@ export default function Hero() {
             className="text-center lg:text-left"
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
-          >
+            animate="visible">
             <motion.div
               variants={itemVariants}
               className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 border border-primary/20" >
-              <span className="text-sm font-semibold">Best Designing Agency 2025-26</span>
+              <span className="text-sm font-semibold">Best Designing Agency 2026-27</span>
             </motion.div>
             <motion.h1
               variants={itemVariants}
