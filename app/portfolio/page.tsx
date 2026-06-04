@@ -176,7 +176,7 @@ export default function PortfolioPage() {
                 { label: "WordPress", value: "wordpress" },
                 { label: "Custom HTML", value: "html" },
                 { label: "Shopify", value: "shopify" },
-                { label: "React/Next", value: "react" },
+                // { label: "React/Next", value: "react" },
               ].map((tab) => (
                 <button
                   key={tab.value}
