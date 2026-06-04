@@ -80,34 +80,6 @@ const projects = [
     link: "https://glossnroll.com.au/",
     category: "react",
   },
-  {
-    title: "Glossnroll",
-    desc: "Local service business website",
-    image: "/portfolio/glossnroll.png",
-    link: "https://glossnroll.com.au/",
-    category: "react",
-  },
-  {
-    title: "Glossnroll",
-    desc: "Local service business website",
-    image: "/portfolio/glossnroll.png",
-    link: "https://glossnroll.com.au/",
-    category: "react",
-  },
-  {
-    title: "Glossnroll",
-    desc: "Local service business website",
-    image: "/portfolio/glossnroll.png",
-    link: "https://glossnroll.com.au/",
-    category: "react",
-  },
-  {
-    title: "Glossnroll",
-    desc: "Local service business website",
-    image: "/portfolio/glossnroll.png",
-    link: "https://glossnroll.com.au/",
-    category: "react",
-  },
 ]
 export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState("wordpress")
