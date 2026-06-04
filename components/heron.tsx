@@ -1,6 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+"use client"
+
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import Image from "next/image"
+import { AnimatePresence, motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import {
   ArrowRight,
   Sparkles,
@@ -15,12 +19,7 @@ import {
   Palette,
   ChevronLeft,
   ChevronRight,
-} from "lucide-react";
-import { ThreeBackground } from "./ThreeBackground";
-import heroImage from "@/assets/hero-banner.jpg";
-import slideEcom from "@/assets/slide-ecommerce.jpg";
-import slideSeo from "@/assets/slide-seo.jpg";
-import slideBranding from "@/assets/slide-branding.jpg";
+} from "lucide-react"
 
 const slides = [
   {
