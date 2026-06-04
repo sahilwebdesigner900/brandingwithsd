@@ -82,23 +82,20 @@ export default function FullPricingPage() {
   ]
 
   const standaloneServices = [
-  { name: "Custom Next.js Website", price: "₹ 22,000+", cat: "Modern Stack", image: "/nextjs.png" },
-  { name: "Custom HTML Website", price: "₹ 20,000+", cat: "Modern Stack", image: "/html.png" },
+  { name: "Custom Next.js Website", price: "₹ 20,000", cat: "Modern Stack", image: "/nextjs.png" },
+  { name: "Custom HTML Website", price: "₹ 18,000", cat: "Modern Stack", image: "/html.png" },
   // { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "/tailwind.png" },
-
-  { name: "Simple WordPress Setup", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
-  { name: "Advanced WordPress Elementor Site", price: "₹ 12,000+", cat: "CMS", image: "/elementor.png" },
+  { name: "WordPress Website", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
+  { name: "Google Business Profile With LOCAL SEO", price: "₹ 5,000", cat: "Marketing", image: "/icons/menu/gmb.png" },
+  { name: "Advanced WordPress Elementor Site", price: "₹ 12,000", cat: "CMS", image: "/elementor.png" },
   { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/wordpress.png" },
   { name: "Malware Removal & Security Setup in Wordpress", price: "₹ 2,000", cat: "Maintenance", image: "/icons/menu/ssl.webp" },
   { name: "Google Analytics/Google Console Setup in Wordpress", price: "₹ 3,000", cat: "Marketing", image: "/wordpress.png" },
-
-  { name: "WooCommerce Shopify Store Setup", price: "₹ 10,000+", cat: "E-Com", image: "/shopify.png" },
-  { name: "Shopify Custom Liquid Theme", price: "₹ 18,000+", cat: "E-Com", image: "/shopify.png" },
+  { name: "Shopify Store Setup", price: "₹ 10,000", cat: "E-Com", image: "/shopify.png" },
+  { name: "Shopify Custom Liquid Theme", price: "₹ 18,000", cat: "E-Com", image: "/shopify.png" },
   // { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
-
-  { name: "SEO one-page & Internal Links , Content Checking", price: "₹ 5,000", cat: "Marketing", image: "/seo.png" },
+  { name: "SEO on-page & Internal Links , Content Checking", price: "₹ 5,000", cat: "Marketing", image: "/seo.png" },
   // { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "/seo2.png" },
-  { name: "Google Business Profile With LOCAL SEO", price: "₹ 5,000+", cat: "Marketing", image: "/icons/menu/gmb.png" },
   { name: "Create Social Media Posts Instagram/LinkedIn/FaceBook", price: "₹ 300+/per", cat: "Marketing", image: "/icons/menu/content.png" },
   // { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "/laravel.png" },
   // { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "/api.png" },
