@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
+import Heron from "@/components/heron"
 import TrustBadges from "@/components/trust-badges"
 import ResultsSection from "@/components/results-section"
 import { AwardsSection } from "@/components/awards-section"
@@ -33,6 +34,7 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Navigation />
       <Hero />
+      <Heron/>
       <TrustBadges />
       <ResultsSection />
       <AwardsSection />
