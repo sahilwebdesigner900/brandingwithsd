@@ -91,7 +91,7 @@ export default function FullPricingPage() {
   { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/wordpress.png" },
   { name: "Malware Removal & Security Setup in Wordpress", price: "₹ 2,000", cat: "Maintenance", image: "/icons/menu/ssl.webp" },
   { name: "Google Analytics/Google Console Setup in Wordpress", price: "₹ 3,000", cat: "Marketing", image: "/wordpress.png" },
-  { name: "Shopify Store Setup", price: "₹ 10,000", cat: "E-Com", image: "/shopify.png" },
+  { name: "Shopify Store Website", price: "₹ 10,000", cat: "E-Com", image: "/shopify.png" },
   { name: "Shopify Custom Liquid Theme", price: "₹ 18,000", cat: "E-Com", image: "/shopify.png" },
   // { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
   { name: "SEO on-page & Internal Links , Content Checking", price: "₹ 5,000", cat: "Marketing", image: "/seo.png" },
