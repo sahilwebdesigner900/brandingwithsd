@@ -46,6 +46,13 @@ const projects = [
     category: "wordpress",
   },
   {
+    title: "Ride Ciao",
+    desc: "Ciao Cabs Company",
+    image: "/portfolio/rideciao.png",
+    link: "https://rideciao.com/",
+    category: "wordpress",
+  },
+  {
     title: "Demon Bikini",
     desc: "Shopify Store",
     image: "/portfolio/demonbikini.webp",
