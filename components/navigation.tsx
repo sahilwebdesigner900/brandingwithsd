@@ -98,11 +98,11 @@ export default function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-background border-b border-border shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:py-2 py-2 lg:py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-start h-full gap-2">
-            <div className="relative w-56 h-10 sm:w-32 sm:h-24">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="relative w-32 h-10 sm:w-40 sm:h-12">
               <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
             </div>
           </Link>
@@ -113,7 +113,7 @@ export default function Navigation() {
               onMouseEnter={() => setIsMegaMenuOpen(true)}
               onMouseLeave={() => setIsMegaMenuOpen(false)}
             >
-              <button className={`flex items-center gap-1 px-4 py-2 text-[18px] font-semibold transition-colors ${isMegaMenuOpen ? 'text-primary' : 'text-foreground/80'}`}>
+              <button className={`flex items-center gap-1 px-4 py-2 text-[16px] font-semibold transition-colors ${isMegaMenuOpen ? 'text-primary' : 'text-foreground/80'}`}>
                 Services
                 <ChevronDown size={14} className={`transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -174,7 +174,7 @@ export default function Navigation() {
             </div>
 
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="px-4 py-2 text-[18px] font-semibold text-foreground/80 hover:text-primary transition-colors">
+              <Link key={link.href} href={link.href} className="px-4 py-2 text-[16px] font-semibold text-foreground/80 hover:text-primary transition-colors">
                 {link.label}
               </Link>
             ))}
