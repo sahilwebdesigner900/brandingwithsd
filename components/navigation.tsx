@@ -101,8 +101,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-32 h-10 sm:w-40 sm:h-12">
+          <Link href="/" className="flex items-start h-full gap-2">
+            <div className="relative w-56 h-10 sm:w-32 sm:h-24">
               <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
             </div>
           </Link>

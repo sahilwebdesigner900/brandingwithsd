@@ -98,7 +98,7 @@ export default function Footer() {
             {/* Brand Section */}
             <div className="lg:col-span-2 space-y-6">
               <Link href="/" className="flex items-center gap-2">
-                <div className="relative w-52 h-20 sm:w-80 sm:h-25">
+                <div className="relative w-52 h-20 sm:w-50 sm:h-25">
                   <Image src="/brandingwithsd-logo-Photoroom.png" alt="Logo" fill className="object-contain" priority />
                 </div>
               </Link>
