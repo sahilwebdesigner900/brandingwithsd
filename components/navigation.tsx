@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import {
   // Layout, Smartphone, Briefcase, RefreshCcw, ShoppingBag, Search, Link2, MapPin, ShoppingCart, BarChart3,
-   Menu, X, ChevronDown, ChevronRight,
+  Menu, X, ChevronDown, ChevronRight,
   // Code, Box, Coffee, Globe, Terminal, Atom, ShieldCheck, Hexagon, Cpu, Bug, PenTool, Mail, Share2, MousePointer2, Server, ShieldAlert,
 } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -99,15 +99,28 @@ export default function Navigation() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        {/* <div className="flex items-center justify-between h-20 "> */}
+        <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          {/* <Link href="/" className="flex items-center gap-2">
             <div className="relative w-32 h-10 sm:w-40 sm:h-12">
               <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
             </div>
+          </Link> */}
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={160}
+              height={48}
+              priority
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </Link>
+
           {/* --- DESKTOP NAVIGATION --- */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1 flex-1 justify-center">
+          {/* <div className="hidden lg:flex items-center gap-1"> */}
             <div
               className="static"
               onMouseEnter={() => setIsMegaMenuOpen(true)}
@@ -148,23 +161,18 @@ export default function Navigation() {
                       <div className="grid grid-cols-2 gap-3">
                         {serviceData[activeCategory]?.map((sub) => (
                           <Link
-                            key={sub.label}
-                            href={sub.href}
-                            className="flex items-center gap-2 p-2 border border-border/50 rounded-xl hover:border-primary/40 hover:shadow-md transition-all group"
-                          >
-                            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-neutral-50bg-neutral-50">
-                              <Image
-                                src={sub.icon}
-                                alt={sub.label}
-                                width={42}
-                                height={42}
-                                className="transition-transform"
-                              />
-                            </div>
-                            <span className="text-[16px] font-bold text-foreground/80 group-hover:text-primary">
-                              {sub.label}
-                            </span>
-                          </Link>
+  key={sub.label}
+  href={sub.href}
+  className="flex items-center gap-3 p-2 border border-border/50 rounded-xl hover:border-primary/40 hover:shadow-md transition-all group"
+>
+  <div className="flex items-center justify-center w-10 h-10 shrink-0 rounded-lg bg-neutral-50">
+    <Image src={sub.icon} alt={sub.label} width={32} height={32} className="object-contain" />
+  </div>
+  <span className="text-base font-bold text-foreground/80 group-hover:text-primary">
+    {sub.label}
+  </span>
+</Link>
+
                         ))}
                       </div>
                     </div>
@@ -180,30 +188,35 @@ export default function Navigation() {
             ))}
           </div>
           {/* Desktop Right Side */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
             <Button asChild className="rounded-full px-7 font-bold shadow-md bg-primary hover:scale-105 transition-transform">
               <Link href="/contact">Contact Us</Link>
             </Button>
-          </div>
+          </div> */}
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
+  <ThemeToggle />
+  <Button asChild className="rounded-full px-7 font-bold shadow-md bg-primary hover:scale-105 transition-transform">
+    <Link href="/contact">Contact Us</Link>
+  </Button>
+</div>
+
 
           {/* Mobile Call Button */}
-          <div className="lg:hidden flex items-center gap-3">
-            <a href="tel:+917625903382" className="p-2 text-foreground">
-              <Phone size={28} />
-            </a>
+          <div className="lg:hidden flex items-center gap-2 shrink-0">
+  <a href="tel:+917625903382" className="p-2 text-foreground" aria-label="Call">
+    <Phone size={26} />
+  </a>
+  <button
+    className="p-2 text-foreground"
+    onClick={() => setIsOpen(!isOpen)}
+    aria-label="Toggle menu"
+  >
+    {isOpen ? <X size={26} /> : <Menu size={26} />}
+  </button>
+</div>
 
-            <button
-              className="p-2 text-foreground"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
           {/* Mobile Menu Toggle */}
-          {/* <button className="lg:hidden p-2 text-foreground" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button> */}
         </div>
       </div>
 
@@ -295,7 +308,7 @@ export default function Navigation() {
                   <ThemeToggle />
                 </div>
                 <Button asChild className="w-full py-8 rounded-2xl font-extrabold text-xl shadow-lg bg-[#1e40af] hover:bg-[#1e3a8a]">
-                  <Link href="/contact" onClick={() => setIsOpen(false)}>Contect Us</Link>
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>
                 </Button>
               </div>
             </div>
