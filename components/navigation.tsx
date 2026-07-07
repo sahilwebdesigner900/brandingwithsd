@@ -101,11 +101,23 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          {/* <Link href="/" className="flex items-center gap-2">
             <div className="relative w-36 h-12 sm:w-44 sm:h-14">
               <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
             </div>
-          </Link>
+          </Link> */}
+
+          <Link href="/" className="flex items-center gap-2 shrink-0">
+  <Image
+    src="/logo.png"
+    alt="Logo"
+    width={220}
+    height={70}
+    priority
+    className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+  />
+</Link>
+
           
           {/* --- DESKTOP NAVIGATION --- */}
           <div className="hidden lg:flex items-center gap-1">
