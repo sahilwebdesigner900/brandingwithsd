@@ -113,7 +113,7 @@ export default function Navigation() {
               onMouseEnter={() => setIsMegaMenuOpen(true)}
               onMouseLeave={() => setIsMegaMenuOpen(false)}
             >
-              <button className={`flex items-center gap-1 px-4 py-2 text-[16px] font-semibold transition-colors ${isMegaMenuOpen ? 'text-primary' : 'text-foreground/80'}`}>
+              <button className={`flex items-center gap-1 px-4 py-2 text-[18px] font-semibold transition-colors ${isMegaMenuOpen ? 'text-primary' : 'text-foreground/80'}`}>
                 Services
                 <ChevronDown size={14} className={`transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -174,7 +174,7 @@ export default function Navigation() {
             </div>
 
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="px-4 py-2 text-[16px] font-semibold text-foreground/80 hover:text-primary transition-colors">
+              <Link key={link.href} href={link.href} className="px-4 py-2 text-[18px] font-semibold text-foreground/80 hover:text-primary transition-colors">
                 {link.label}
               </Link>
             ))}
