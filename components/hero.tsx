@@ -1,227 +1,247 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
 
-// 👇 replace these with your 3 banner images
-import banner1 from "@/banner-1.jpg"
-import banner2 from "@/banner-2.jpg"
-import banner3 from "@/banner-3.jpg"
+const heroImageSrc1 = "/banner-image.jpg"
 
-const slides = [banner1, banner2, banner3]
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+  },
+}
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+}
+
+/** Circular badge with continuously rotating text around a centered stat */
 function CircularBadge({
-  text,
   value,
   label,
+  text,
   accent = "primary",
-  duration = 18,
-  reverse = false,
-  className = "",
+  size = 160,
 }: {
-  text: string
   value: string
   label: string
+  text: string
   accent?: "primary" | "accent"
-  duration?: number
-  reverse?: boolean
-  className?: string
+  size?: number
 }) {
-  const color = accent === "accent" ? "text-accent" : "text-primary"
-  const ring =
-    accent === "accent" ? "border-accent/40" : "border-primary/40"
+  const radius = size / 2 - 14
+  const cx = size / 2
+  const cy = size / 2
+  const pathId = `circle-${label.replace(/\s+/g, "-")}`
+  const accentClass = accent === "primary" ? "text-primary" : "text-accent"
+  const ringClass =
+    accent === "primary"
+      ? "from-primary/30 to-accent/10 border-primary/30"
+      : "from-accent/30 to-primary/10 border-accent/30"
 
   return (
     <div
-      className={`relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 ${className}`}
+      className={`relative rounded-full bg-card/80 backdrop-blur border shadow-2xl bg-gradient-to-br ${ringClass} flex items-center justify-center`}
+      style={{ width: size, height: size }}
     >
       {/* Rotating text ring */}
       <motion.svg
-        viewBox="0 0 200 200"
+        viewBox={`0 0 ${size} ${size}`}
         className="absolute inset-0 w-full h-full"
-        animate={{ rotate: reverse ? -360 : 360 }}
-        transition={{ duration, ease: "linear", repeat: Infinity }}
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, ease: "linear", duration: 14 }}
       >
         <defs>
           <path
-            id={`circle-${label}`}
-            d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
+            id={pathId}
+            d={`M ${cx},${cy} m -${radius},0 a ${radius},${radius} 0 1,1 ${radius * 2},0 a ${radius},${radius} 0 1,1 -${radius * 2},0`}
           />
         </defs>
-        <text className={`fill-current ${color} text-[15px] font-semibold tracking-[0.25em] uppercase`}>
-          <textPath href={`#circle-${label}`} startOffset="0%">
-            {`${text} • ${text} • `}
-          </textPath>
+        <text className={`fill-current ${accentClass} text-[10px] font-semibold tracking-[0.25em] uppercase`}>
+          <textPath href={`#${pathId}`}>{`${text} • ${text} • `}</textPath>
         </text>
       </motion.svg>
 
-      {/* Inner disc */}
-      <div
-        className={`absolute inset-[18%] rounded-full bg-card border ${ring} shadow-xl flex flex-col items-center justify-center backdrop-blur`}
-      >
-        <div className={`text-2xl sm:text-3xl font-bold ${color}`}>{value}</div>
-        <div className="text-[10px] sm:text-xs text-muted-foreground text-center px-2 leading-tight mt-0.5">
-          {label}
-        </div>
+      {/* Center stat */}
+      <div className="text-center px-2">
+        <div className={`text-2xl md:text-3xl font-bold ${accentClass}`}>{value}</div>
+        <div className="text-[11px] text-muted-foreground leading-tight">{label}</div>
       </div>
     </div>
   )
 }
 
 export default function Hero() {
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrent((p) => (p + 1) % slides.length)
-    }, 4000)
-    return () => clearInterval(id)
-  }, [])
-
   return (
-    <section className="relative overflow-hidden bg-background">
-      {/* soft glows */}
-      <div className="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
+    <section className="relative overflow-hidden bg-background py-12 md:py-20">
+      {/* Ambient background blobs */}
+      <div className="absolute inset-0 z-0 opacity-40 dark:opacity-25 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* LEFT — copy */}
+      {/* Subtle grid overlay */}
+      <div
+        className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            className="text-center lg:text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-4 py-1.5 text-sm text-foreground/80 backdrop-blur">
-              <Sparkles className="h-3.5 w-3.5 text-accent" />
-              Best Designing Agency 2026-27
-            </div>
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 border border-primary/20 backdrop-blur"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              </span>
+              <span className="text-sm font-semibold">Best Designing Agency 2026-27</span>
+            </motion.div>
 
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
-              Web Design,
-              <br />
-              Development &{" "}
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-[1.1] text-balance"
+            >
+              Web Design/Development and Marketing for{" "}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-[shine_4s_linear_infinite]">
-                  Marketing
+                  Your Business
                 </span>
-                <span className="absolute left-0 -bottom-1 h-1 w-full rounded-full bg-accent/70" />
-              </span>{" "}
-              for
-              <br />
-              Your Business
-            </h1>
+              </span>
+            </motion.h1>
 
-            <p className="mt-6 max-w-lg text-base sm:text-lg text-muted-foreground">
-              Generate more sales and get qualified leads with AI-powered digital
-              marketing services. 5+ years of proven excellence with 84+
-              successful projects.
-            </p>
+            <motion.p
+              variants={itemVariants}
+              className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 text-balance leading-relaxed"
+            >
+              Generate more sales and get qualified leads with AI-powered digital marketing services. 5+ years of
+              proven excellence with 84+ successful projects.
+            </motion.p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" className="rounded-full">
-                Schedule Free Consultation
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full">
-                Get Free Audit
-              </Button>
-            </div>
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-accent hover:shadow-xl hover:shadow-primary/30 transition-all w-full sm:w-auto"
+                  asChild
+                >
+                  <Link href="/contact">Schedule Free Consultation</Link>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto hover:bg-primary/10 bg-transparent border-primary/30"
+                  asChild
+                >
+                  <Link href="/contact">Get Free Audit</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 84+ Happy Clients
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                 24/7 Support
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 4.8★ Rating
-              </span>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
 
-          {/* RIGHT — slider + badges */}
+          {/* Right Image Section — visible on mobile too */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative mx-auto w-full max-w-xl"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative mt-8 lg:mt-0 max-w-md mx-auto lg:max-w-none w-full"
           >
-            {/* Slider frame */}
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl bg-card">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={current}
-                  src={slides[current]}
-                  alt={`Banner ${current + 1}`}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.9, ease: "easeInOut" }}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </AnimatePresence>
+            {/* Decorative rotating ring behind image */}
+            <motion.div
+              className="absolute -inset-4 rounded-[2rem] border-2 border-dashed border-primary/20"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+            />
 
-              {/* dots */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrent(i)}
-                    className={`h-1.5 rounded-full transition-all ${
-                      i === current ? "w-6 bg-white" : "w-2 bg-white/50"
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
-                ))}
-              </div>
+            <div className="relative w-full aspect-square rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
+              <Image
+                src={heroImageSrc1}
+                alt="Digital Marketing Team"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
             </div>
 
-            {/* TOP-RIGHT badge */}
+            {/* Circular badge — bottom-left */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
+              initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="absolute -top-6 -right-6 sm:-top-8 sm:-right-8 z-10"
+              transition={{ delay: 0.5, duration: 0.6, type: "spring" }}
+              className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8"
             >
               <CircularBadge
-                text="Leads Generated"
                 value="1M+"
                 label="Leads Generated"
+                text="Proven Results"
                 accent="primary"
-                duration={18}
+                size={140}
               />
             </motion.div>
 
-            {/* BOTTOM-LEFT badge */}
+            {/* Circular badge — top-right */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
+              initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-              className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 z-10"
+              transition={{ delay: 0.6, duration: 0.6, type: "spring" }}
+              className="absolute -top-6 -right-6 sm:-top-8 sm:-right-8"
             >
               <CircularBadge
-                text="Keywords Ranked"
                 value="5M+"
                 label="Keywords Ranked"
+                text="SEO Powered"
                 accent="accent"
-                duration={22}
-                reverse
+                size={140}
               />
             </motion.div>
           </motion.div>
         </div>
       </div>
 
-      <style>{`
+      {/* Shine keyframes for the gradient headline */}
+      <style jsx>{`
         @keyframes shine {
-          to { background-position: 200% center; }
+          0% { background-position: 0% center; }
+          100% { background-position: 200% center; }
         }
       `}</style>
     </section>
