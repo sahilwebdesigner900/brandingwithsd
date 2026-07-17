@@ -10,7 +10,7 @@ import { useEffect, useState } from "react"
 const heroSlides = [
   { src: "/banner-image.jpg", alt: "SEO dashboard preview" },
   { src: "/banner-image-2.jpg", alt: "Analytics preview" },
-  { src: "/banner-image-3.jpg", alt: "Keyword research preview" },
+  { src: "/banner-image.jpg", alt: "Keyword research preview" },
 ]
 
 const containerVariants = {
@@ -63,7 +63,7 @@ useEffect(() => {
               variants={itemVariants}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance"
             >
-              Web Design/Development and Marketing for{" "}
+              Web Design and Marketing for{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
                 Your Business
               </span>
@@ -73,8 +73,7 @@ useEffect(() => {
               variants={itemVariants}
               className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 text-balance leading-relaxed"
             >
-              Generate more sales and get qualified leads with AI-powered digital marketing services. 5+ years of
-              proven excellence with 84+ successful projects.
+              Generate more sales and get qualified leads. 5+ years of proven excellence with 84+ successful projects.
             </motion.p>
 
             <motion.div
@@ -121,7 +120,7 @@ useEffect(() => {
             {/* Glow */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl pointer-events-none" />
             {/* Slides */}
-            <div className="relative aspect-square w-full max-w-[550px] mx-auto overflow-hidden rounded-3xl border border-border/50 shadow-2xl bg-card">
+            <div className="relative aspect-square w-full max-w-[750px] mx-auto overflow-hidden rounded-3xl border border-border/50 shadow-2xl bg-card">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={index}
@@ -180,38 +179,6 @@ useEffect(() => {
               </motion.div>
           </motion.div>
         </div>
-
-        {/* Stats Grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ staggerChildren: 0.1 }}
-        >
-          {[
-            { number: "5+", label: "Years Experience" },
-            { number: "84+", label: "Projects Done" },
-            { number: "352+", label: "WebSites" },
-            { number: "84+", label: "Happy Clients" },
-            { number: "1k+", label: "Web Designing" },
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              className="text-center p-4 md:p-6 rounded-2xl border border-border/50 bg-card/50 backdrop-blur hover:border-primary/50 hover:bg-card/80 transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.05, translateY: -5 }}
-            >
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1">
-                {stat.number}
-              </div>
-              <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   )
