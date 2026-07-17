@@ -1,12 +1,12 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
-// 👉 replace with your 3 real images (in /public)
+
 const heroSlides = [
   { src: "/banner-image.jpg", alt: "SEO dashboard preview" },
   { src: "/banner-image-2.jpg", alt: "Analytics preview" },
@@ -17,258 +17,202 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
   },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 }
 
-/* ---------- Circular rotating badge ---------- */
-function CircularBadge({
-  text,
-  value,
-  className = "",
-  reverse = false,
-}: {
-  text: string
-  value: string
-  className?: string
-  reverse?: boolean
-}) {
-  // repeat text so it fills the ring evenly
-  const ringText = ` ${text} • `.repeat(6)
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.6 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.9, duration: 0.6, type: "spring" }}
-      className={`relative h-28 w-28 sm:h-32 sm:w-32 ${className}`}
-    >
-      {/* Rotating text ring */}
-      <motion.svg
-        viewBox="0 0 200 200"
-        className="absolute inset-0 h-full w-full"
-        animate={{ rotate: reverse ? -360 : 360 }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      >
-        <defs>
-          <path
-            id={`circle-${text.replace(/\s/g, "")}`}
-            d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
-          />
-        </defs>
-        <text
-          fill="currentColor"
-          className="fill-foreground text-[16px] font-semibold tracking-widest uppercase"
-        >
-          <textPath href={`#circle-${text.replace(/\s/g, "")}`}>
-            {ringText}
-          </textPath>
-        </text>
-      </motion.svg>
-
-      {/* Dashed decorative ring */}
-      <div className="absolute inset-2 rounded-full border border-dashed border-border/60" />
-
-      {/* Inner solid circle with value */}
-      <div className="absolute inset-5 rounded-full bg-card border border-border/50 shadow-xl backdrop-blur flex items-center justify-center">
-        <span className="text-xl sm:text-2xl font-bold text-accent">
-          {value}
-        </span>
-      </div>
-    </motion.div>
-  )
-}
-
-/* ---------- Auto-playing image slider ---------- */
-function HeroSlider() {
+export default function Hero() {
   const [index, setIndex] = useState(0)
 
-  useEffect(() => {
-    const t = setInterval(
-      () => setIndex((i) => (i + 1) % heroSlides.length),
-      4000,
-    )
-    return () => clearInterval(t)
-  }, [])
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIndex((prev) => (prev + 1) % heroSlides.length)
+  }, 3000)
 
+  return () => clearInterval(interval)
+}, [])
   return (
-    <div className="relative w-full aspect-square max-w-md mx-auto">
-      {/* Slow rotating dashed ring behind */}
-      <motion.div
-        aria-hidden
-        className="absolute -inset-6 rounded-3xl border border-dashed border-primary/20"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-      />
-
-      {/* Glow */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl" />
-
-      {/* Slides */}
-      <div className="relative h-full w-full overflow-hidden rounded-3xl border border-border/50 shadow-2xl bg-card">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroSlides[index].src}
-              alt={heroSlides[index].alt}
-              fill
-              priority
-              sizes="(max-width: 768px) 90vw, 450px"
-              className="object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Dots */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {heroSlides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${
-                i === index
-                  ? "w-6 bg-accent"
-                  : "w-2 bg-white/60 hover:bg-white"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/* ---------- Main Hero ---------- */
-export default function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-background text-foreground pt-20 pb-24 lg:pt-28 lg:pb-32">
-      {/* Ambient background */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--color-primary)/0.12,transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,var(--color-accent)/0.15,transparent_60%)]" />
-        <motion.div
-          className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl"
-          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl"
-          animate={{ scale: [1.1, 1, 1.1], opacity: [0.5, 0.3, 0.5] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(var(--color-foreground)_1px,transparent_1px),linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)] bg-[size:44px_44px]" />
+    <section className="relative overflow-hidden bg-background py-12 md:py-20">
+      <div className="absolute inset-0 z-0 opacity-30 dark:opacity-20">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* LEFT — copy */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
           <motion.div
+            className="text-center lg:text-left"
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
-            className="text-center lg:text-left"
-          >
-            <motion.span
+            animate="visible">
+            <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur"
-            >
-              <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              #1 SEO Platform of 2026
-            </motion.span>
-
+              className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 border border-primary/20" >
+              <span className="text-sm font-semibold">Best Designing Agency 2026-27</span>
+            </motion.div>
             <motion.h1
               variants={itemVariants}
-              className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance"
             >
-              Rank higher.{" "}
-              <span className="relative inline-block bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-[shine_6s_linear_infinite]">
-                Grow faster.
+              Web Design/Development and Marketing for{" "}
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
+                Your Business
               </span>
-              <br />
-              Own your niche.
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0"
+              className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 text-balance leading-relaxed"
             >
-              All-in-one SEO toolkit trusted by 50,000+ marketers. Keyword
-              research, competitor analysis, backlink tracking and AI-powered
-              content — in one dashboard.
+              Generate more sales and get qualified leads with AI-powered digital marketing services. 5+ years of
+              proven excellence with 84+ successful projects.
             </motion.p>
 
             <motion.div
               variants={itemVariants}
-              className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button asChild size="lg" className="rounded-full px-8">
-                <Link href="/signup">Start Free Trial</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="rounded-full px-8"
-              >
-                <Link href="/demo">Watch Demo</Link>
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button asChild
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-accent hover:shadow-xl transition-all w-full sm:w-auto"
+                >
+                  <Link href="/contact">Schedule Free Consultation</Link>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button asChild size="lg" variant="outline" className="w-full sm:w-auto hover:bg-primary/10 bg-transparent">
+                  <Link href="/contact">Get Free Audit</Link>
+                </Button>
+              </motion.div>
             </motion.div>
 
-            <motion.div
-              variants={itemVariants}
-              className="mt-10 flex flex-wrap gap-x-8 gap-y-3 justify-center lg:justify-start text-sm text-muted-foreground"
-            >
-              <span>✓ No credit card required</span>
-              <span>✓ 14-day free trial</span>
-              <span>✓ Cancel anytime</span>
+            {/* Trust Badges */}
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                84+ Happy Clients
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-2 h-2 bg-accent rounded-full"></span>
+                24/7 Support
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                4.8★ Rating
+              </div>
             </motion.div>
           </motion.div>
-
-          {/* RIGHT — slider + circular badges */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative mx-auto w-full max-w-md lg:max-w-lg"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative flex justify-center mt-10 lg:mt-0"
           >
-            <HeroSlider />
+            {/* Glow */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl pointer-events-none" />
+            {/* Slides */}
+            <div className="relative aspect-square w-full max-w-[550px] mx-auto overflow-hidden rounded-3xl border border-border/50 shadow-2xl bg-card">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={heroSlides[index].src}
+                    alt={heroSlides[index].alt}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 90vw, 450px"
+                    className="object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
 
-            <CircularBadge
-              text="Happy Users"
-              value="50K+"
-              className="absolute -bottom-10 -left-6 sm:-left-10 z-20"
-            />
-            <CircularBadge
-              text="Keywords Ranked"
-              value="5M+"
-              reverse
-              className="absolute -top-10 -right-6 sm:-right-10 z-20"
-            />
+              {/* Dots */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setIndex(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                    className={`h-2 rounded-full transition-all ${i === index
+                        ? "w-6 bg-accent"
+                        : "w-2 bg-white/60 hover:bg-white"
+                      }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+              {/* Floating Stats Cards */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="absolute bottom-2 left-2 md:-bottom-6 md:-left-6 bg-card border border-border/50 rounded-2xl p-4 shadow-xl backdrop-blur"
+              >
+                <div className="text-3xl font-bold text-primary">1M+</div>
+                <div className="text-sm text-muted-foreground">Leads Generated</div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="absolute top-2 right-2 md:-top-6 md:-right-6 bg-card border border-border/50 rounded-2xl p-4 shadow-xl backdrop-blur"
+              >
+                <div className="text-3xl font-bold text-accent">5M+</div>
+                <div className="text-sm text-muted-foreground">Keywords Ranked</div>
+              </motion.div>
           </motion.div>
         </div>
-      </div>
 
-      {/* keyframes for the shine sweep */}
-      <style jsx global>{`
-        @keyframes shine {
-          to {
-            background-position: 200% center;
-          }
-        }
-      `}</style>
+        {/* Stats Grid */}
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.1 }}
+        >
+          {[
+            { number: "5+", label: "Years Experience" },
+            { number: "84+", label: "Projects Done" },
+            { number: "352+", label: "WebSites" },
+            { number: "84+", label: "Happy Clients" },
+            { number: "1k+", label: "Web Designing" },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              className="text-center p-4 md:p-6 rounded-2xl border border-border/50 bg-card/50 backdrop-blur hover:border-primary/50 hover:bg-card/80 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ scale: 1.05, translateY: -5 }}
+            >
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1">
+                {stat.number}
+              </div>
+              <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }
