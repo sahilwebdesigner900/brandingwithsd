@@ -233,7 +233,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl pointer-events-none" />
 
             {/* Slides */}
-            <div className="relative aspect-square sm:aspect-[4/3] w-full max-w-[620px] mx-auto overflow-hidden rounded-3xl border border-border/50 shadow-2xl bg-card">
+            <div className="relative aspect-square sm:aspect-[4/3] w-full max-w-[720px] mx-auto overflow-hidden rounded-3xl border border-border/50 shadow-2xl bg-card">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={index}

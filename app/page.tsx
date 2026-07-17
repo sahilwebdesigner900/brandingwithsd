@@ -34,8 +34,8 @@ export default function Home() {
       <Navigation />
       <Hero />
       <TrustBadges />
-      <ResultsSection />
       <AwardsSection />
+      <ResultsSection />
       <ServicesSection />
       {/* <TeamHighlight /> */}
       <PartnershipsSection />
