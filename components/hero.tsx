@@ -138,17 +138,16 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 border border-primary/20"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span className="text-sm font-semibold">Best Designing Agency 2026-27</span>
+              <span className="text-sm font-semibold">Trusted Web Design & Digital Marketing Agency</span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-bold text-foreground mb-6 leading-[1.1] text-balance"
+              className="text-3.5xl md:text-4.5xl lg:text-[3rem] xl:text-5.5xl font-bold text-foreground mb-6 leading-[1.1] text-balance"
             >
-              Web Design and Marketing for{" "}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-[gradientMove_4s_ease_infinite]">
-                  Your Business
+                  BrandingWithSD – 
                 </span>
                 <svg
                   className="absolute -bottom-2 left-0 w-full"
@@ -166,13 +165,14 @@ export default function Hero() {
                   />
                 </svg>
               </span>
+              Professional Web Design, Development & Digital Marketing Agency
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 text-balance leading-relaxed mx-auto lg:mx-0"
             >
-              Generate more sales and get qualified leads. 5+ years of proven excellence with 84+ successful projects.
+              At BrandingWithSD, we create modern, fast-loading websites that help businesses attract more customers, generate qualified leads, and grow online. From WordPress, Shopify, and Next.js development to SEO, Google Business Profile optimization, and digital marketing, we provide everything your business needs to succeed online.
             </motion.p>
 
             <motion.div
@@ -185,7 +185,7 @@ export default function Hero() {
                   size="lg"
                   className="bg-gradient-to-r from-primary to-accent hover:shadow-xl hover:shadow-primary/20 transition-all w-full sm:w-auto"
                 >
-                  <Link href="/contact">Schedule Free Consultation</Link>
+                  <Link href="/contact">Get Free Consultation</Link>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -195,7 +195,7 @@ export default function Hero() {
                   variant="outline"
                   className="w-full sm:w-auto hover:bg-primary/10 bg-transparent"
                 >
-                  <Link href="/contact">Get Free Audit</Link>
+                  <Link href="/portfolio">View Our Portfolio</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -207,15 +207,15 @@ export default function Hero() {
             >
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                84+ Happy Clients
+                WordPress • Shopify • Next.js
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                24/7 Support
+                Fast & SEO Optimized Websites
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                4.8★ Rating
+                Google Business Profile Expert
               </div>
             </motion.div>
           </motion.div>
@@ -254,7 +254,6 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
-
               {/* Prev / Next arrows */}
               <button
                 onClick={() => goTo(index - 1)}
@@ -270,7 +269,6 @@ export default function Hero() {
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
-
               {/* Dots */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                 {heroSlides.map((_, i) => (
@@ -302,7 +300,6 @@ export default function Hero() {
                 className="w-24 h-24 md:w-32 md:h-32"
               />
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}

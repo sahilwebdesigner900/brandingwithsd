@@ -6,30 +6,30 @@ import { TrendingUp, Users, Search, Star } from "lucide-react"
 export default function ResultsSection() {
   const results = [
     {
-      metric: "3500%",
+      metric: "200%",
       description: "Traffic Growth",
-      clients: "450+ clients",
+      clients: "122+ clients",
       icon: TrendingUp,
       color: "from-blue-600 to-cyan-500"
     },
     {
-      metric: "15M+",
+      metric: "1M+",
       description: "Organic Visitors",
-      clients: "380+ websites",
+      clients: "139+ websites",
       icon: Search,
       color: "from-indigo-600 to-purple-500"
     },
     {
       metric: "89%",
       description: "Top 10 Rankings",
-      clients: "520+ campaigns",
+      clients: "89+ campaigns",
       icon: Users,
       color: "from-emerald-600 to-teal-500"
     },
     {
       metric: "4.9/5",
       description: "Client Rating",
-      clients: "500+ reviews",
+      clients: "280+ reviews",
       icon: Star,
       color: "from-orange-500 to-yellow-500"
     },
@@ -69,7 +69,7 @@ export default function ResultsSection() {
             Proven <span className="text-blue-600 dark:text-blue-500">Results</span>
           </motion.h2>
           <p className="text-sm md:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
-            Data-driven growth that scales brands across the globe.
+            Delivering Measurable Results Through Creative Digital Solutions - We help businesses establish a powerful online presence with modern websites, SEO-driven strategies, and digital marketing solutions that generate leads, improve visibility, and support long-term growth.
           </p>
         </div>
 

@@ -25,15 +25,15 @@ const services = [
   {
     title: "Digital Marketing",
     description:
-      "Comprehensive digital marketing strategies to increase brand visibility and drive qualified leads.",
+      "Grow your business with targeted digital marketing strategies, social media campaigns, content marketing, and performance-driven advertising.",
     href: "/services/digital-marketing",
     image:
       "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "SEO Optimization",
+    title: "SEO & Google Business Profile",
     description:
-      "Dominate search rankings and increase organic traffic with our proven SEO strategies.",
+      "Improve your search rankings, increase local visibility, optimize your Google Business Profile, and attract more qualified organic traffic.",
     href: "/services/seo",
     image: "https://images.unsplash.com/photo-1686061594225-3e92c0cd51b0?auto=format&fit=crop&w=1171&q=80",
   },
@@ -54,15 +54,14 @@ const services = [
 ]
 
 
-
 export function ServicesSection() {
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background via-background to-background/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          subtitle="Services"
-          title="Our Digital Solutions"
-          description="Complete digital services designed to grow your business online"
+          subtitle="Our Services"
+          title="Complete Digital Solutions to Grow Your Business Online"
+          description="From custom website development to SEO and digital marketing, BrandingWithSD provides end-to-end digital solutions that help businesses build a strong online presence, attract more customers, and achieve sustainable growth."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -7,23 +7,23 @@ export default function TrustBadges() {
   const badges = [
     {
       icon: Trophy,
-      title: "22+ Years",
-      description: "Industry Excellence",
+      title: "5+ Years",
+      description: "Industry Experience",
     },
     {
       icon: Users2,
-      title: "256+ Clients",
+      title: "226+ Clients",
       description: "Satisfied & Trusted",
     },
     {
       icon: BarChart3,
-      title: "7,556+",
+      title: "195+",
       description: "Projects Completed",
     },
     {
       icon: CheckCircle,
-      title: "98% Reach",
-      description: "Client Retention",
+      title: "99% Reach",
+      description: "Client Satisfaction",
     },
   ]
 

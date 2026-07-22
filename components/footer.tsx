@@ -42,8 +42,8 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/sahil-dutt-80b50121b/", label: "LinkedIn" },
-    { icon: Twitter, href: "https://share.google/b3ugH7WCxkkAvPtQj", label: "Map" },
-    { icon: Twitter, href: "https://share.google/b3ugH7WCxkkAvPtQj", label: "MapPin" },
+    { icon: Map, href: "https://share.google/b3ugH7WCxkkAvPtQj", label: "GMB" },
+    { icon: MapPin, href: "https://share.google/b3ugH7WCxkkAvPtQj", label: "Location of GMB" },
     { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100073794800904", label: "Facebook" },
     { icon: Instagram, href: "https://www.instagram.com/brandingwithsd/", label: "Instagram" },
   ]
@@ -64,16 +64,16 @@ export default function Footer() {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-5xl font-bold text-primary-foreground tracking-tight leading-tight">
-                Ready to transform <br />
-                your digital presence?
+                Ready to Grow Your <br />
+                Business Online?
               </h2>
               <p className="text-primary-foreground/80 text-lg font-medium">
-                22+ years of expertise at your service.
+                Let's build a modern, high-performing website that attracts more customers, increases your online visibility, and helps your business grow with confidence.
               </p>
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Link href="/contact"
                   className="inline-block px-8 py-4 bg-background text-foreground font-bold rounded-xl shadow-lg transition-colors hover:bg-background/90" >
-                  Get Started Now </Link>
+                  Let's Get Started</Link>
               </motion.div>
             </div>
 

@@ -40,9 +40,9 @@ export function AwardsSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionHeader
-          subtitle="Expertise"
-          title="Where Expertise Meets Excellence"
-          description="Our experienced professionals combine deep knowledge and refined skills to deliver exceptional outcomes."
+          subtitle="Our Expertise"
+          title="Professional Web Design, Development & Digital Marketing Services"
+          description="At BrandingWithSD, we create modern, high-performance websites that help businesses grow. Our expertise in WordPress, Shopify, React, Next.js, SEO, Google Business Profile optimization, and digital marketing enables us to deliver fast, responsive, and conversion-focused solutions."
         />
 
         {/* --- RESPONSIVE GRID --- 
@@ -86,31 +86,6 @@ export function AwardsSection() {
 
                 {/* Subtle Glow behind the card on hover */}
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 rounded-3xl blur-2xl transition-opacity pointer-events-none" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* --- STATS SECTION --- */}
-        <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { stat: "500+", label: "Happy Clients" },
-            { stat: "1000+", label: "Projects Done" },
-            { stat: "22+", label: "Years In Business" },
-            { stat: "4.9★", label: "Average Rating" },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-[2.5rem] bg-secondary/20 border border-border/40 text-center group hover:bg-secondary/30 transition-all duration-500"
-            >
-              <div className="text-3xl md:text-4xl font-black text-foreground mb-1 group-hover:scale-110 transition-transform duration-500">
-                {item.stat}
-              </div>
-              <div className="text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground/80">
-                {item.label}
               </div>
             </motion.div>
           ))}

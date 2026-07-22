@@ -32,14 +32,14 @@ export default function PartnershipsSection() {
             className="inline-flex items-center gap-2 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 px-4 py-1.5 rounded-full mb-6"
           >
             <Sparkles size={14} className="text-blue-600" />
-            <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">Our Partners</span>
+            <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">Trusted by Businesses</span>
           </motion.div>
           <h2 className="text-4xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter leading-[1] md:leading-[0.9]">
-            Building the <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600">Future of Search.</span>
+            Helping Businesses Build, <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600">Grow & Succeed Online</span>
           </h2>
           <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-base md:text-lg">
-            We don't just work for companies; we embed ourselves into their growth engine. 
+            At BrandingWithSD, we work closely with startups, local businesses, and growing brands to create high-performance websites and digital solutions that drive measurable business growth and long-term success.
           </p>
         </div>
 
