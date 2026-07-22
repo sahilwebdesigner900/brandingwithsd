@@ -143,8 +143,7 @@ const standaloneServices = [
   { name: "Flyer & Brochure Design", price: "₹ 1,200+", cat: "Branding", image: "/flyer.png",},
   { name: "Monthly Website Maintenance",price: "₹ 2,000/month", cat: "Maintenance",image: "/maintenance.png",},
   { name: "Website Backup & Security", price: "₹ 1,500+", cat: "Maintenance", image: "/icons/menu/ssl.webp",},
-];
-
+]
  const faqs = [
   {
   question: "Which website platform is best for my business?",
