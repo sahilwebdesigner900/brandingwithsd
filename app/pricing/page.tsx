@@ -170,7 +170,7 @@ const standaloneServices = [
   answer:
     "Yes. We offer website maintenance, security updates, backups, performance optimization, and technical support to ensure your website continues to perform at its best.",
 },
-];
+]
 
   const filteredServices = standaloneServices.filter(s =>
     s.name.toLowerCase().includes(searchTerm.toLowerCase())
