@@ -12,6 +12,23 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 
+
+export const metadata = {
+  title: "Website Pricing | WordPress, Shopify & Custom Web Development Packages | BrandingWithSD",
+  description:
+    "Explore affordable website design and development packages from BrandingWithSD. Compare WordPress, Shopify, React, Next.js, SEO, and digital marketing pricing to find the perfect solution for your business.",
+  keywords: [
+    "Website Pricing","Web Design Packages","Website Development Cost","WordPress Website Pricing","Shopify Website Packages","Custom Website Development", "React Development Pricing", "Next.js Development", "SEO Packages","Digital Marketing Pricing", "Affordable Website Design","Business Website Cost","Website Maintenance", "BrandingWithSD", "Web Development Services"
+  ],
+  openGraph: {
+    title:"Website Pricing & Digital Service Packages | BrandingWithSD",
+    description:"Compare affordable web design, WordPress, Shopify, React, Next.js, SEO, and digital marketing packages tailored to your business needs.",
+    type: "website",
+    locale: "en_US",
+  },
+};
+
+
 // --- TYPES ---
 type CurrencyType = "INR" | "USD" | "AUD"
 
@@ -48,74 +65,113 @@ export default function FullPricingPage() {
   const plans: Plan[] = [
     {
       name: "Standard",
-      priceINR: "5,000 – 10,000",
-      priceUSD: "60 – 100",
-      priceAUD: "65 – 110",
+      priceINR: "6,000 – 12,000",
+      priceUSD: "65 – 110",
+      priceAUD: "75 – 120",
       duration: "One-time",
       description: "Perfect for personal brands & startups",
-      features: ["3–5 Custom Pages", "WordPress + Elementor", "Basic SEO Setup", "Speed Optimization", "1 Year Free Hosting", "1 Year Maintenance"],
+      features: ["up to 8 Pages", "WordPress + Elementor", "Mobile & tablet responsive", "Contact form integration", "1 round of revisions", "Basic SEO Setup", "Speed Optimization", "1 Year Maintenance"],
       popular: false,
       cta: "Get Started",
     },
     {
       name: "Business Pro",
-      priceINR: "8,000 – 12,000",
-      priceUSD: "90 – 160",
-      priceAUD: "100 – 180",
+      priceINR: "10,000 – 16,000",
+      priceUSD: "100 – 160",
+      priceAUD: "110 – 180",
       duration: "One-time",
       description: "Advanced tools for growing businesses",
-      features: ["5–8 Custom Pages", "Elementor Bulder", "Advanced On-Page SEO", "Booking System", "Google Analytics", "Priority Support"],
+      features: ["up to 15 Pages", "Elementor Bulder", "Advanced On-Page SEO", "Advanced performance optimization", "Security setup", "3-4 revisions",   "Contact forms + basic integrations",  "Booking System", "WooCommerce Setup", "Google Analytics", "Priority Support"],
       popular: true,
       cta: "Grow My Business",
     },
     {
       name: "Advanced Website",
-      priceINR: "12,000 – 20,000",
-      priceUSD: "140 – 220",
-      priceAUD: "160 – 240",
+      priceINR: "20,000 – 30,000",
+      priceUSD: "220 – 300",
+      priceAUD: "260 – 350",
       duration: "One-time",
       description: "High-performance Website",
-      features: ["Unlimited Products", "Premium UI/UX", "Elementor Bulder", "Advanced On-Page SEO", "Booking System", "Google Analytics", "Priority Support", "Advanced Security", "14-Day Delivery"],
+      features: ["Premium UI/UX", "Elementor Bulder", "Advanced On-Page SEO", "Booking System", "Google Analytics", "Priority Support", "Advanced Security", "14-Day Delivery" , "3-4 revisions",  "Contact forms + basic integrations" ,"Unlimited Products" ],
       popular: false,
       cta: "Scale Now",
     },
   ]
 
-  const standaloneServices = [
-  { name: "Custom Next.js Website", price: "₹ 20,000", cat: "Modern Stack", image: "/nextjs.png" },
-  { name: "Custom HTML Website", price: "₹ 18,000", cat: "Modern Stack", image: "/html.png" },
+  // const standaloneServices = [
+  // { name: "Custom Next.js Website", price: "₹ 20,000", cat: "Modern Stack", image: "/nextjs.png" },
+  // { name: "Custom HTML Website", price: "₹ 18,000", cat: "Modern Stack", image: "/html.png" },
   // { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "/tailwind.png" },
-  { name: "WordPress Website", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
-  { name: "Google Business Profile With LOCAL SEO", price: "₹ 5,000", cat: "Marketing", image: "/icons/menu/gmb.png" },
-  { name: "Advanced WordPress Elementor Site", price: "₹ 12,000", cat: "CMS", image: "/elementor.png" },
-  { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/wordpress.png" },
-  { name: "Malware Removal & Security Setup in Wordpress", price: "₹ 2,000", cat: "Maintenance", image: "/icons/menu/ssl.webp" },
-  { name: "Google Analytics/Google Console Setup in Wordpress", price: "₹ 3,000", cat: "Marketing", image: "/wordpress.png" },
-  { name: "Shopify Store Website", price: "₹ 10,000", cat: "E-Com", image: "/shopify.png" },
-  { name: "Shopify Custom Liquid Theme", price: "₹ 18,000", cat: "E-Com", image: "/shopify.png" },
+  // { name: "WordPress Website", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
+  // { name: "Google Business Profile With LOCAL SEO", price: "₹ 5,000", cat: "Marketing", image: "/icons/menu/gmb.png" },
+  // { name: "Advanced WordPress Elementor Site", price: "₹ 12,000", cat: "CMS", image: "/elementor.png" },
+  // { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/wordpress.png" },
+  // { name: "Malware Removal & Security Setup in Wordpress", price: "₹ 2,000", cat: "Maintenance", image: "/icons/menu/ssl.webp" },
+  // { name: "Google Analytics/Google Console Setup in Wordpress", price: "₹ 3,000", cat: "Marketing", image: "/wordpress.png" },
+  // { name: "Shopify Store Website", price: "₹ 10,000", cat: "E-Com", image: "/shopify.png" },
+  // { name: "Shopify Custom Liquid Theme", price: "₹ 18,000", cat: "E-Com", image: "/shopify.png" },
   // { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
-  { name: "SEO on-page & Internal Links , Content Checking", price: "₹ 5,000", cat: "Marketing", image: "/seo.png" },
+  // { name: "SEO on-page & Internal Links , Content Checking", price: "₹ 5,000", cat: "Marketing", image: "/seo.png" },
   // { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "/seo2.png" },
-  { name: "Create Social Media Posts Instagram/LinkedIn/FaceBook", price: "₹ 300+/per", cat: "Marketing", image: "/icons/menu/content.png" },
+  // { name: "Create Social Media Posts Instagram/LinkedIn/FaceBook", price: "₹ 300+/per", cat: "Marketing", image: "/icons/menu/content.png" },
   // { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "/laravel.png" },
   // { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "/api.png" },
   // { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "/database.png" },
-]
+// ]
+const standaloneServices = [
+  { name: "Business Website (HTML/CSS/JS)", price: "₹ 8,000+", cat: "Web Design", image: "/html.png",},
+  { name: "Custom React.js Website", price: "₹ 18,000+", cat: "Modern Stack", image: "/react.png", },
+  { name: "Custom Next.js Website", price: "₹ 20,000+", cat: "Modern Stack", image: "/nextjs.png", },
+  { name: "Landing Page Design", price: "₹ 4,000+", cat: "Web Design", image: "/landing-page.png", },
+  { name: "WordPress Business Website", price: "₹ 5,000+", cat: "WordPress", image: "/wordpress.png",},
+  { name: "WordPress Elementor Pro Website", price: "₹ 12,000+", cat: "WordPress", image: "/elementor.png", },
+  { name: "WooCommerce Store",price: "₹ 10,000+", cat: "WordPress", image: "/woocommerce.png", },
+  { name: "WordPress Speed Optimization", price: "₹ 2,000+", cat: "WordPress", image: "/wordpress.png",},
+  { name: "WordPress Security & Malware Removal", price: "₹ 2,500+", cat: "Maintenance", image: "/icons/menu/ssl.webp",},
+  { name: "Website Migration", price: "₹ 2,000+", cat: "Maintenance", image: "/migration.png",},
+  { name: "Shopify Store Setup", price: "₹ 10,000+", cat: "Shopify", image: "/shopify.png", },
+  { name: "Custom Shopify Theme", price: "₹ 18,000+", cat: "Shopify", image: "/shopify.png",},
+  { name: "Shopify Speed Optimization", price: "₹ 3,000+", cat: "Shopify", image: "/shopify.png",},
+  { name: "Google Business Profile Setup", price: "₹ 2,500+",cat: "SEO", image: "/icons/menu/gmb.png",},
+  { name: "Local SEO + Google Business Profile",price: "₹ 5,000+", cat: "SEO",  image: "/icons/menu/gmb.png",},
+  { name: "On-Page SEO Optimization", price: "₹ 5,000+", cat: "SEO", image: "/seo.png", },
+  { name: "Technical SEO Audit",price: "₹ 3,500+", cat: "SEO", image: "/seo.png",},
+  { name: "Google Analytics & Search Console Setup", price: "₹ 3,000+", cat: "SEO", image: "/wordpress.png",},
+  { name: "Social Media Post Design",price: "₹ 300/post",cat: "Branding", image: "/icons/menu/content.png",},
+  { name: "Logo Design", price: "₹ 1,500+", cat: "Branding", image: "/logo.png",},
+  { name: "Business Card Design", price: "₹ 800+", cat: "Branding", image: "/business-card.png",},
+  { name: "Flyer & Brochure Design", price: "₹ 1,200+", cat: "Branding", image: "/flyer.png",},
+  { name: "Monthly Website Maintenance",price: "₹ 2,000/month", cat: "Maintenance",image: "/maintenance.png",},
+  { name: "Website Backup & Security", price: "₹ 1,500+", cat: "Maintenance", image: "/icons/menu/ssl.webp",},
+];
 
  const faqs = [
-  { question: "What do I need to get started?",
-    answer: "To get started, we only need your business details, logo (if available), and any reference websites you like. If you don’t have content or images, our team will create everything for you."},
-  { question: "Do you provide hosting and maintenance?",
-    answer:"Yes, all our packages include 1 year of high-speed hosting and 12 months of technical maintenance. We ensure your website stays fast, secure, and fully updated."},
-  { question: "How long does it take to complete a website?",
-    answer: "Most websites are completed within 5–14 business days, depending on the project size and requirements." },
-  { question: "Will my website be mobile-friendly and SEO optimized?",
-    answer: "Absolutely. Every website we build is fully responsive (mobile-friendly) and optimized for SEO to help you rank better on Google."},
-  { question: "Can I upgrade or modify my website later?",
-    answer: "Yes, your website is fully scalable. You can upgrade features, redesign pages, or add new functionality at any time."},
-  { question: "Do you provide SEO and digital marketing services?",
-    answer: "Yes, we offer complete SEO, Local SEO (GMB optimization), and digital marketing services to help grow your business online." },
-]
+  {
+  question: "Which website platform is best for my business?",
+  answer:
+    "We help you choose the right platform based on your goals. WordPress is ideal for business websites, Shopify is perfect for online stores, and React or Next.js is best for high-performance custom web applications.",
+},
+{
+  question: "Do I own my website after it's completed?",
+  answer:
+    "Yes. Once your project is completed and the final payment is made, you have full ownership of your website, including the design, content, and source files.",
+},
+{
+  question: "Can you redesign my existing website?",
+  answer:
+    "Yes. We redesign outdated websites with modern layouts, improved performance, mobile responsiveness, and SEO optimization to help your business achieve better results online.",
+},
+{
+  question: "Do you offer custom website development?",
+  answer:
+    "Yes. We build custom websites using React, Next.js, TypeScript, WordPress, and Shopify based on your unique business requirements.",
+},
+{
+  question: "Do you provide ongoing website support?",
+  answer:
+    "Yes. We offer website maintenance, security updates, backups, performance optimization, and technical support to ensure your website continues to perform at its best.",
+},
+];
 
   const filteredServices = standaloneServices.filter(s =>
     s.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -222,7 +278,7 @@ export default function FullPricingPage() {
             <div className="flex items-center gap-4">
               <Globe className="text-blue-600" size={32} />
               <div>
-                <p className="text-xs font-black uppercase tracking-widest text-blue-600">Free Hosting</p>
+                <p className="text-xs font-black uppercase tracking-widest text-blue-600">Hosting</p>
                 <p className="font-bold">High-Speed SSD</p>
               </div>
             </div>
