@@ -199,25 +199,6 @@ export default function Hero() {
                 </Button>
               </motion.div>
             </motion.div>
-
-            {/* Trust Badges */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start"
-            >
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                WordPress • Shopify • Next.js
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                Fast & SEO Optimized Websites
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Google Business Profile Expert
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right Slider — 60% */}
@@ -283,7 +264,6 @@ export default function Hero() {
                 ))}
               </div>
             </div>
-
             {/* Circular rotating-text badges */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -307,9 +287,9 @@ export default function Hero() {
               className="absolute -top-4 -right-2 md:-top-8 md:-right-8 z-20"
             >
               <RotatingTextBadge
-                number="5M+"
-                label="Keywords Ranked"
-                circleText="KEYWORDS RANKED • KEYWORDS RANKED • "
+                number="294"
+                label="Website Design"
+                circleText="Website Design • Website Development • Website Desinging • "
                 accent="accent"
                 duration={22}
                 reverse
