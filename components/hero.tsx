@@ -165,14 +165,14 @@ export default function Hero() {
                   />
                 </svg>
               </span>
-              Professional Web Design, Development & Digital Marketing Agency
+              Web Design, Development & Digital Marketing
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 text-balance leading-relaxed mx-auto lg:mx-0"
             >
-              At BrandingWithSD, we create modern, fast-loading websites that help businesses attract more customers, generate qualified leads, and grow online. From WordPress, Shopify, and Next.js development to SEO, Google Business Profile optimization, and digital marketing, we provide everything your business needs to succeed online.
+             We build fast, modern, SEO-friendly websites that help businesses attract more customers, generate leads, and grow online.
             </motion.p>
 
             <motion.div
