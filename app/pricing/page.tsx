@@ -13,22 +13,6 @@ import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 
 
-export const metadata = {
-  title: "Website Pricing | WordPress, Shopify & Custom Web Development Packages | BrandingWithSD",
-  description:
-    "Explore affordable website design and development packages from BrandingWithSD. Compare WordPress, Shopify, React, Next.js, SEO, and digital marketing pricing to find the perfect solution for your business.",
-  keywords: [
-    "Website Pricing","Web Design Packages","Website Development Cost","WordPress Website Pricing","Shopify Website Packages","Custom Website Development", "React Development Pricing", "Next.js Development", "SEO Packages","Digital Marketing Pricing", "Affordable Website Design","Business Website Cost","Website Maintenance", "BrandingWithSD", "Web Development Services"
-  ],
-  openGraph: {
-    title:"Website Pricing & Digital Service Packages | BrandingWithSD",
-    description:"Compare affordable web design, WordPress, Shopify, React, Next.js, SEO, and digital marketing packages tailored to your business needs.",
-    type: "website",
-    locale: "en_US",
-  },
-};
-
-
 // --- TYPES ---
 type CurrencyType = "INR" | "USD" | "AUD"
 
@@ -97,27 +81,6 @@ export default function FullPricingPage() {
       cta: "Scale Now",
     },
   ]
-
-  // const standaloneServices = [
-  // { name: "Custom Next.js Website", price: "₹ 20,000", cat: "Modern Stack", image: "/nextjs.png" },
-  // { name: "Custom HTML Website", price: "₹ 18,000", cat: "Modern Stack", image: "/html.png" },
-  // { name: "Tailwind CSS UI Kit", price: "₹ 4,000+", cat: "Modern Stack", image: "/tailwind.png" },
-  // { name: "WordPress Website", price: "₹ 5,000", cat: "CMS", image: "/wordpress.png" },
-  // { name: "Google Business Profile With LOCAL SEO", price: "₹ 5,000", cat: "Marketing", image: "/icons/menu/gmb.png" },
-  // { name: "Advanced WordPress Elementor Site", price: "₹ 12,000", cat: "CMS", image: "/elementor.png" },
-  // { name: "WordPress Speed Optimization", price: "₹ 2,000", cat: "CMS", image: "/wordpress.png" },
-  // { name: "Malware Removal & Security Setup in Wordpress", price: "₹ 2,000", cat: "Maintenance", image: "/icons/menu/ssl.webp" },
-  // { name: "Google Analytics/Google Console Setup in Wordpress", price: "₹ 3,000", cat: "Marketing", image: "/wordpress.png" },
-  // { name: "Shopify Store Website", price: "₹ 10,000", cat: "E-Com", image: "/shopify.png" },
-  // { name: "Shopify Custom Liquid Theme", price: "₹ 18,000", cat: "E-Com", image: "/shopify.png" },
-  // { name: "Payment Gateway Integration", price: "₹ 3,000", cat: "E-Com", image: "/payment.png" },
-  // { name: "SEO on-page & Internal Links , Content Checking", price: "₹ 5,000", cat: "Marketing", image: "/seo.png" },
-  // { name: "Monthly SEO Maintenance", price: "₹ 5,000+", cat: "Marketing", image: "/seo2.png" },
-  // { name: "Create Social Media Posts Instagram/LinkedIn/FaceBook", price: "₹ 300+/per", cat: "Marketing", image: "/icons/menu/content.png" },
-  // { name: "Custom PHP/Laravel Development", price: "₹ 8,000+", cat: "Dev", image: "/laravel.png" },
-  // { name: "API Integration (Third Party)", price: "₹ 5,000+", cat: "Dev", image: "/api.png" },
-  // { name: "Database Design & Optimization", price: "₹ 6,000+", cat: "Dev", image: "/database.png" },
-// ]
 const standaloneServices = [
   { name: "Business Website (HTML/CSS/JS)", price: "₹ 8,000+", cat: "Web Design", image: "/html.png"},
   { name: "Custom React.js Website", price: "₹ 18,000+", cat: "Modern Stack", image: "/react.png"},
