@@ -5,7 +5,7 @@ import { Jost } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-
+  
 const jost = Jost({
   subsets: ["latin"],
   weight: ["100","200","300","400","500","600","700","800","900"],

@@ -8,9 +8,10 @@ import { useEffect, useState, useCallback } from "react"
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react"
 
 const heroSlides = [
-  { src: "/banner-image.jpg", alt: "SEO dashboard preview" },
-  { src: "/banner-image-2.jpg", alt: "Analytics preview" },
-  { src: "/banner-image.jpg", alt: "Keyword research preview" },
+  { src: "/banner-image-1.jpg", alt: "Web Desiging Team" },
+  { src: "/banner-image-2.jpg", alt: "SEO Team" },
+  { src: "/banner-image-3.jpg", alt: "Sahil Dutt Founder" },
+  { src: "/banner-image-4.jpg", alt: "Devolopment Team" },
 ]
 
 const containerVariants = {
@@ -274,7 +275,7 @@ export default function Hero() {
               <RotatingTextBadge
                 number="1M+"
                 label="Leads Generated"
-                circleText="LEADS GENERATED • LEADS GENERATED • "
+                // circleText="LEADS GENERATED • LEADS GENERATED • "
                 accent="primary"
                 duration={18}
                 className="w-24 h-24 md:w-32 md:h-32"
@@ -289,7 +290,7 @@ export default function Hero() {
               <RotatingTextBadge
                 number="294"
                 label="Website Design"
-                circleText="Website Design • Website Development • Website Desinging • "
+                // circleText="Website Design • Website Development • Website Desinging • "
                 accent="accent"
                 duration={22}
                 reverse
