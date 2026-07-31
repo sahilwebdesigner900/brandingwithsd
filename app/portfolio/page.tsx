@@ -11,6 +11,20 @@ import Image from "next/image"
 import Link from "next/link"
 const projects = [
   {
+    title: "Gray Tiger Security",
+    desc: "professional security services across Dubai and the UAE",
+    image: "/portfolio/gray-tiger-scurity.webp",
+    link: "https://graytigersecurity.com/",
+    category: "wordpress",
+  },
+  {
+    title: "Karan Hair Studio",
+    desc: "Best Hair Salon in Surrey",
+    image: "/portfolio/karan-hair-salon.webp",
+    link: "https://karanhairstudio.com/",
+    category: "wordpress",
+  },
+  {
     title: "Outreach Auto Works",
     desc: "Expert Car Repair & Auto Maintenance in Adelaide",
     image: "/portfolio/outreachautoworks.png",
@@ -127,7 +141,7 @@ export default function PortfolioPage() {
               <div className="flex flex-wrap justify-center md:flex-nowrap gap-6 md:gap-12 font-black text-lg md:text-xl text-slate-300 italic">
                 <span>SUKOJI</span>
                 <span>GRAY TIGERS</span>
-                <span>ACKO</span>
+                <span>Outreach Auto Works</span>
                 <span>NIKK TECH</span>
               </div>
             </div>
